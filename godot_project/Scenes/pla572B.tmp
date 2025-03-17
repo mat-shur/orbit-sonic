@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://ki3qq23jpnk3"]
+
+[ext_resource type="Script" path="res://Scripts/planets_and_asteroids.gd" id="1_vpwwn"]
+[ext_resource type="Texture2D" uid="uid://ebncu0nppwil" path="res://Assets/ring.png" id="2_s2ivt"]
+
+[node name="planets_and_asteroids" type="Node2D" groups=["to_delete"]]
+script = ExtResource("1_vpwwn")
+belt_width = null
+belt_height = null
+grid_size = null
+spawn_chance = null
+comet_spawn_height = null
+asteroid_spawn_distance = null
+asteroid_spawn_chance = null
+asteroid_speed = null
+
+[node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
+zoom = Vector2(0.05, 0.05)
+
+[node name="CometSpawner" type="Timer" parent="."]
+wait_time = 0.15
+autostart = true
+
+[node name="Player" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0, 0.988235, 0.968627, 1)
+position = Vector2(0, -10000)
+scale = Vector2(5, 5)
+texture = ExtResource("2_s2ivt")
+
+[connection signal="timeout" from="CometSpawner" to="." method="_on_comet_spawner_timeout"]

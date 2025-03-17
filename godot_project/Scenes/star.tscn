@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://bcfyq7t7m66rd"]
+
+[ext_resource type="Script" uid="uid://cw0py37hoeabp" path="res://Scripts/star.gd" id="1_j36t4"]
+[ext_resource type="Texture2D" uid="uid://dg7txwojam70u" path="res://Assets/circle.png" id="2_hdgi2"]
+[ext_resource type="Texture2D" uid="uid://d0632v6thvjcn" path="res://Assets/star.png" id="3_801vm"]
+[ext_resource type="AudioStream" uid="uid://jqbe7jnwoaxd" path="res://Assets/pickupCoin (5).wav" id="4_o1be7"]
+
+[sub_resource type="Curve" id="Curve_a58y7"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.511236, 0.945055), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_t47yw"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0.156863, 0.564706, 0.937255, 0.196078, 0.156863, 0.564706, 0.937255, 0.470588, 0.156863, 0.564706, 0.937255, 0.627451)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wu8w1"]
+radius = 20.0
+
+[sub_resource type="Gradient" id="Gradient_m7bre"]
+offsets = PackedFloat32Array(0, 0.8, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="Star" type="Area2D" groups=["star"]]
+z_index = -5
+z_as_relative = false
+script = ExtResource("1_j36t4")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+amount = 35
+texture = ExtResource("2_hdgi2")
+lifetime = 4.0
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 8.0
+initial_velocity_max = 12.0
+scale_amount_min = 0.01
+scale_amount_max = 0.02
+scale_amount_curve = SubResource("Curve_a58y7")
+color_ramp = SubResource("Gradient_t47yw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.156863, 0.564706, 0.937255, 1)
+texture = ExtResource("3_801vm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_wu8w1")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+modulate = Color(0.156863, 0.564706, 0.937255, 1)
+emitting = false
+amount = 30
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+local_coords = true
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 25.0
+initial_velocity_max = 75.0
+scale_amount_max = 3.0
+color_ramp = SubResource("Gradient_m7bre")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_o1be7")

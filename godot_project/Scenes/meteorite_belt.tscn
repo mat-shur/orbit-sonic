@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh4fxw07wpyyf"]
+
+[ext_resource type="Script" uid="uid://bfjx3hvaoi14o" path="res://Scripts/meteorite_belt.gd" id="1_hy7j1"]
+
+[node name="meteorite_belt" type="Node2D" groups=["to_delete"]]
+script = ExtResource("1_hy7j1")
+
+[node name="Player" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.07, 0.07)

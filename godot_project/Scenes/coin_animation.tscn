@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy1omnrcel3ie"]
+
+[ext_resource type="Script" uid="uid://dda6qhd2hcofj" path="res://Scripts/coin_animation.gd" id="1_aer10"]
+[ext_resource type="Texture2D" uid="uid://ebncu0nppwil" path="res://Assets/ring.png" id="2_86f4s"]
+
+[node name="CoinAnimation" type="Node2D"]
+script = ExtResource("1_aer10")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 0.0980392, 1)
+texture = ExtResource("2_86f4s")

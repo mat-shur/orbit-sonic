@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkjdmdvj25v5o"]
+
+[ext_resource type="Script" uid="uid://yn7lvoco5w7d" path="res://Scripts/asteroid.gd" id="1_4f57b"]
+[ext_resource type="Texture2D" uid="uid://brmfeqi2he1pp" path="res://Assets/asteroid.png" id="2_6gtke"]
+[ext_resource type="Texture2D" uid="uid://bayacrfv4eors" path="res://Assets/comet.png" id="3_3mnce"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5mydh"]
+radius = 24.0
+
+[sub_resource type="Curve" id="Curve_pxb2g"]
+_data = [Vector2(0.228571, 0.820908), 0.0, 0.0, 0, 0, Vector2(0.514286, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.0202594), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_qvr1o"]
+offsets = PackedFloat32Array(0.078341, 0.493088, 0.917051)
+colors = PackedColorArray(1, 1, 1, 0, 0.724643, 0.724643, 0.724643, 0.462745, 1, 1, 1, 0)
+
+[node name="asteroid" type="Area2D" groups=["meteorite"]]
+script = ExtResource("1_4f57b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_6gtke")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5mydh")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+texture = ExtResource("3_3mnce")
+randomness = 1.0
+lifetime_randomness = 1.0
+direction = Vector2(1, 1)
+gravity = Vector2(0, 100)
+scale_amount_min = 0.4
+scale_amount_max = 0.6
+scale_amount_curve = SubResource("Curve_pxb2g")
+color_ramp = SubResource("Gradient_qvr1o")

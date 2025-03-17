@@ -1,0 +1,118 @@
+[gd_scene load_steps=14 format=3 uid="uid://c57304t6mjban"]
+
+[ext_resource type="Script" uid="uid://cw0py37hoeabp" path="res://Scripts/star.gd" id="1_ntnxt"]
+[ext_resource type="Texture2D" uid="uid://dg7txwojam70u" path="res://Assets/circle.png" id="2_geh36"]
+[ext_resource type="Texture2D" uid="uid://davppimcewawk" path="res://Assets/174205191683502244.png" id="3_geh36"]
+[ext_resource type="Texture2D" uid="uid://dqsqcj11cy8up" path="res://Assets/174205194374920246 (1).png" id="4_geh36"]
+[ext_resource type="Texture2D" uid="uid://be78832kx8esm" path="res://Assets/booster0.png" id="4_o2alu"]
+[ext_resource type="AudioStream" uid="uid://cbfpc3t6i41gd" path="res://Assets/random (5).wav" id="5_xoqm6"]
+[ext_resource type="Texture2D" uid="uid://cqgg8cmyyuooo" path="res://Assets/booster1.png" id="6_xoqm6"]
+
+[sub_resource type="Curve" id="Curve_a58y7"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.511236, 0.945055), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_t47yw"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0.838758, 0.422747, 0.0581671, 0.196078, 0.803922, 0.423529, 0.145098, 0.470588, 0.894118, 0.635294, 0.0941176, 0.74902)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wu8w1"]
+radius = 40.0
+
+[sub_resource type="Gradient" id="Gradient_m7bre"]
+offsets = PackedFloat32Array(0, 0.8, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Curve" id="Curve_geh36"]
+_data = [Vector2(1e-05, 1), 0.0, 0.0, 0, 0, Vector2(0.176136, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.404494), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_o2alu"]
+offsets = PackedFloat32Array(0, 0.133333, 0.586667)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="Boooster" type="Area2D" groups=["booster"]]
+z_as_relative = false
+scale = Vector2(1.19, 1.19)
+script = ExtResource("1_ntnxt")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+position = Vector2(0, 46)
+amount = 50
+texture = ExtResource("2_geh36")
+lifetime = 8.0
+preprocess = 10.0
+speed_scale = 3.59
+explosiveness = 0.1
+randomness = 1.0
+lifetime_randomness = 0.21
+emission_shape = 3
+emission_rect_extents = Vector2(15, 15)
+direction = Vector2(0, 10)
+spread = 25.0
+gravity = Vector2(0, -25)
+initial_velocity_min = 8.0
+initial_velocity_max = 25.0
+scale_amount_min = 0.0
+scale_amount_max = 0.02
+scale_amount_curve = SubResource("Curve_a58y7")
+color_ramp = SubResource("Gradient_t47yw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(0, -5)
+texture = ExtResource("3_geh36")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = 1
+z_as_relative = false
+texture = ExtResource("4_geh36")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 0.7)
+shape = SubResource("CircleShape2D_wu8w1")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+modulate = Color(0.933333, 0.666667, 0, 1)
+z_index = -3
+emitting = false
+amount = 30
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+local_coords = true
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 25.0
+initial_velocity_max = 75.0
+scale_amount_max = 3.0
+color_ramp = SubResource("Gradient_m7bre")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_xoqm6")
+volume_db = -5.0
+pitch_scale = 1.2
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="."]
+z_index = -3
+position = Vector2(0, -10.084)
+amount = 6
+texture = ExtResource("6_xoqm6")
+lifetime = 0.65
+preprocess = 10.0
+speed_scale = 0.6
+scale_amount_curve = SubResource("Curve_geh36")
+color_ramp = SubResource("Gradient_o2alu")
+
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="."]
+z_index = -2
+position = Vector2(0, 5.04202)
+amount = 6
+texture = ExtResource("4_o2alu")
+lifetime = 0.65
+preprocess = 10.0
+speed_scale = 0.8
+scale_amount_curve = SubResource("Curve_geh36")
+color_ramp = SubResource("Gradient_o2alu")

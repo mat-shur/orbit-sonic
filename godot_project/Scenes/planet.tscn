@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvsmi0cfrwcdd"]
+
+[ext_resource type="Texture2D" uid="uid://dg7txwojam70u" path="res://Assets/circle.png" id="1_xtngd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2a378"]
+radius = 499.785
+
+[node name="Planet" type="Area2D"]
+z_index = 50
+z_as_relative = false
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xtngd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2a378")

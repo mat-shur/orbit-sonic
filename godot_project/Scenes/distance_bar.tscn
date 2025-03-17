@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://b7le2pcbyjneb"]
+
+[ext_resource type="Shader" uid="uid://cykro0fav1dr" path="res://main.gdshader" id="2_cm6ps"]
+[ext_resource type="Texture2D" uid="uid://hby6qyws778g" path="res://Assets/distance_bar.png" id="3_7sgsq"]
+[ext_resource type="FontFile" uid="uid://duew6w55md6av" path="res://Assets/Fonts/Steelr-d95Yx.otf" id="4_ibtco"]
+
+[sub_resource type="Resource" id="Resource_j4u74"]
+metadata/__load_path__ = "res://Scripts/distance_bar.gd"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ayi6r"]
+shader = ExtResource("2_cm6ps")
+shader_parameter/progress = 0.0
+shader_parameter/edge_fade = 0.05
+
+[sub_resource type="LabelSettings" id="LabelSettings_1ol6m"]
+line_spacing = 5.0
+font = ExtResource("4_ibtco")
+font_size = 45
+outline_size = 45
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Distance" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -421.0
+offset_top = -552.0
+offset_right = -421.0
+offset_bottom = -552.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("Resource_j4u74")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_ayi6r")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -250.0
+offset_right = 15.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_7sgsq")
+stretch_mode = 1
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -18.5
+offset_right = 50.0
+offset_bottom = 18.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "35"
+label_settings = SubResource("LabelSettings_1ol6m")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

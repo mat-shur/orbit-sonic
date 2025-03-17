@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bqv0prlhrrryn"
+path="res://.godot/imported/Star Militia.mp3-76c7535ff715da22d68486098de604d5.mp3str"
+
+[deps]
+
+source_file="res://Assets/Star Militia.mp3"
+dest_files=["res://.godot/imported/Star Militia.mp3-76c7535ff715da22d68486098de604d5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

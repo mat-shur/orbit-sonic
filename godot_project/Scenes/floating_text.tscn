@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc854qc7cqmwm"]
+
+[ext_resource type="Script" uid="uid://bvsgu3428ex1m" path="res://Scripts/floating_text.gd" id="1_0e31c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vdepb"]
+font_size = 18
+font_color = Color(0.952941, 0.733333, 0.109804, 1)
+
+[node name="FloatingText" type="Label"]
+z_index = -5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_vdepb")
+script = ExtResource("1_0e31c")

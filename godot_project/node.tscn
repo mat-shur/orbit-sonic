@@ -1,0 +1,185 @@
+[gd_scene load_steps=7 format=3 uid="uid://ce1a33jchyhmi"]
+
+[ext_resource type="Script" uid="uid://cufs2stab6ilj" path="res://node.gd" id="1_avsrp"]
+[ext_resource type="JSON" path="res://idl.json" id="2_xo0do"]
+
+[sub_resource type="Pubkey" id="Pubkey_osbnw"]
+type = "CUSTOM"
+value = "J8h2wh4rq4emgU31p8FyBkpGMh79Gdgkx13TFkTjSHwP"
+bytes = PackedByteArray(254, 143, 2, 106, 54, 219, 54, 57, 34, 80, 212, 170, 136, 160, 91, 118, 32, 213, 222, 183, 81, 198, 209, 16, 160, 85, 248, 26, 158, 61, 89, 26)
+
+[sub_resource type="Pubkey" id="Pubkey_5hd00"]
+type = "CUSTOM"
+value = "DQpctGneThkHvA3h2W33wZ3mHi9YqvnWcmGrLRQPJAhj"
+bytes = PackedByteArray(184, 102, 113, 192, 220, 59, 138, 200, 97, 6, 32, 148, 216, 233, 249, 222, 51, 238, 228, 162, 239, 167, 57, 83, 146, 182, 184, 8, 142, 106, 217, 102)
+
+[sub_resource type="CandyGuardAccessList" id="CandyGuardAccessList_a6gan"]
+top_level = false
+label = "chest"
+enable_token_payment = true
+token_payment_amount = 1000000000000
+token_payment_mint = SubResource("Pubkey_5hd00")
+token_payment_destination = SubResource("Pubkey_osbnw")
+
+[sub_resource type="CandyGuardAccessList" id="CandyGuardAccessList_4wurv"]
+groups = Array[CandyGuardAccessList]([SubResource("CandyGuardAccessList_a6gan")])
+
+[node name="Node" type="Node"]
+script = ExtResource("1_avsrp")
+guard_settings = SubResource("CandyGuardAccessList_4wurv")
+
+[node name="SolanaClient" type="SolanaClient" parent="."]
+url_override = "https://api.devnet.solana.com"
+ws_url = "wss://api.devnet.solana.com:443"
+
+[node name="AnchorProgram" type="AnchorProgram" parent="."]
+url_override = "https://api.devnet.solana.com"
+pid = "dBAbBm4vRcY1EDDVRpuxWcYE1X6XAYAJKX5chZdhBDK"
+json_file = ExtResource("2_xo0do")
+idl = {
+"accounts": [{
+"name": "Leaderboard",
+"type": {
+"fields": [{
+"name": "players",
+"type": {
+"vec": {
+"defined": "Player"
+}
+}
+}],
+"kind": "struct"
+}
+}],
+"errors": [{
+"code": 6000.0,
+"msg": "Player not found",
+"name": "PlayerNotFound"
+}, {
+"code": 6001.0,
+"msg": "Player already registered",
+"name": "PlayerAlreadyRegistered"
+}, {
+"code": 6002.0,
+"msg": "Username is too long",
+"name": "UsernameTooLong"
+}, {
+"code": 6003.0,
+"msg": "Maximum number of players reached",
+"name": "MaxPlayersReached"
+}, {
+"code": 6004.0,
+"msg": "Player has no active try",
+"name": "NoActiveTry"
+}],
+"instructions": [{
+"accounts": [{
+"isMut": true,
+"isSigner": false,
+"name": "leaderboard"
+}, {
+"isMut": true,
+"isSigner": true,
+"name": "gameOwner"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "systemProgram"
+}],
+"args": [],
+"name": "initializeLeaderboard"
+}, {
+"accounts": [{
+"isMut": true,
+"isSigner": true,
+"name": "player"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "gameOwner"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "leaderboard"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "systemProgram"
+}],
+"args": [{
+"name": "username",
+"type": "string"
+}],
+"name": "newPlayer"
+}, {
+"accounts": [{
+"isMut": true,
+"isSigner": true,
+"name": "player"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "gameOwner"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "leaderboard"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "systemProgram"
+}],
+"args": [],
+"name": "newTry"
+}, {
+"accounts": [{
+"isMut": true,
+"isSigner": true,
+"name": "player"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "leaderboard"
+}],
+"args": [{
+"name": "score",
+"type": "u64"
+}],
+"name": "writeResult"
+}],
+"name": "orbit_leaderboard",
+"types": [{
+"name": "Player",
+"type": {
+"fields": [{
+"name": "username",
+"type": "string"
+}, {
+"name": "pubkey",
+"type": "publicKey"
+}, {
+"name": "lastScore",
+"type": "u64"
+}, {
+"name": "hasActiveTry",
+"type": "bool"
+}],
+"kind": "struct"
+}
+}],
+"version": "0.1.0"
+}
+
+[node name="SystemProgram" type="SystemProgram" parent="."]
+
+[node name="Account" type="Account" parent="."]
+
+[node name="MplCandyGuard" type="MplCandyGuard" parent="."]
+
+[node name="MplTokenMetadata" type="MplTokenMetadata" parent="."]
+url_override = "https://api.devnet.solana.com"
+ws_url = "wss://api.devnet.solana.com:443"
+
+[node name="MplCandyMachine" type="MplCandyMachine" parent="."]
+url_override = "https://api.devnet.solana.com"
+ws_url = "wss://api.devnet.solana.com:443"

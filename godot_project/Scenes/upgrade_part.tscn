@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://bje2aqhgtymb6"]
+
+[ext_resource type="Texture2D" uid="uid://cvbiokgrgkrk8" path="res://Assets/icons8-plus-48.png" id="1_6h8pl"]
+[ext_resource type="Script" uid="uid://bdofj7k07ipep" path="res://Scripts/upgrade_part.gd" id="2_i4x0k"]
+
+[sub_resource type="Curve" id="Curve_r8lrt"]
+_data = [Vector2(0, 0.384615), 0.0, 0.0, 0, 0, Vector2(0.506122, 0.802198), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_oqt0b"]
+offsets = PackedFloat32Array(0, 0.847926, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+
+[node name="UpgradePart" type="CPUParticles2D"]
+z_index = -10
+emitting = false
+amount = 15
+lifetime = 4.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+local_coords = true
+texture = ExtResource("1_6h8pl")
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 70.0
+initial_velocity_max = 90.0
+angular_velocity_min = -25.0
+angular_velocity_max = 25.0
+damping_min = 16.732
+damping_max = 16.732
+angle_min = -25.0
+angle_max = 25.0
+scale_amount_min = 0.6
+scale_amount_curve = SubResource("Curve_r8lrt")
+color_ramp = SubResource("Gradient_oqt0b")
+script = ExtResource("2_i4x0k")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

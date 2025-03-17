@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cule4i7et5qgv"]
+
+[ext_resource type="Texture2D" uid="uid://cw1i2rixkvpo1" path="res://Assets/meteorites/meteorite_3.png" id="1_q8nhw"]
+[ext_resource type="Script" uid="uid://bsh06jun45ss" path="res://Scripts/meteorite.gd" id="1_se0er"]
+
+[node name="Meteorite" type="Area2D" groups=["meteorite"]]
+script = ExtResource("1_se0er")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_q8nhw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." groups=["meteorite"]]
+polygon = PackedVector2Array(-55, -1, -27, -37, 32, -29, 55, 22, 41, 36, -21, 35, -50, 26)

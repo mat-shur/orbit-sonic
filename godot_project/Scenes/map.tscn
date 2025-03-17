@@ -1,0 +1,6289 @@
+[gd_scene load_steps=121 format=3 uid="uid://d0l2edulu1kta"]
+
+[ext_resource type="Script" uid="uid://clwaevtptff56" path="res://Scripts/player.gd" id="1_08nsy"]
+[ext_resource type="Script" uid="uid://bmxruy3hvdsvq" path="res://Scripts/map.gd" id="1_42ewa"]
+[ext_resource type="Texture2D" uid="uid://dtasrw16jqmtx" path="res://Assets/rocket.png" id="1_sqq7f"]
+[ext_resource type="Script" uid="uid://dqei7nj3vd60v" path="res://Scripts/booster_spawner.gd" id="2_88jfv"]
+[ext_resource type="Script" uid="uid://ca6yuyoyin62n" path="res://Scripts/dead_line.gd" id="2_bj2tr"]
+[ext_resource type="Script" uid="uid://3ud5euh5dj6e" path="res://Scripts/coin_spawner.gd" id="2_rns3t"]
+[ext_resource type="Texture2D" uid="uid://by5qgyilw8j5b" path="res://Assets/rocket_v0.png" id="2_s1r1w"]
+[ext_resource type="Script" uid="uid://cynaxi665y1k6" path="res://Scripts/cleaner.gd" id="2_ufpk0"]
+[ext_resource type="Script" uid="uid://d182metvnm224" path="res://addons/virtual_joystick/virtual_joystick.gd" id="3_i52uu"]
+[ext_resource type="PackedScene" uid="uid://bcfyq7t7m66rd" path="res://Scenes/star.tscn" id="3_tkx2u"]
+[ext_resource type="PackedScene" uid="uid://ca3p88oqum43e" path="res://Scenes/coin.tscn" id="3_x1nw0"]
+[ext_resource type="Texture2D" uid="uid://d3hcy43t8y210" path="res://Assets/joystick_base_half_outline.png" id="4_1yl7m"]
+[ext_resource type="Texture2D" uid="uid://bkvmydfn5saxg" path="res://addons/virtual_joystick/textures/joystick_tip.png" id="5_4wnms"]
+[ext_resource type="PackedScene" uid="uid://c57304t6mjban" path="res://Scenes/booster.tscn" id="5_pwqop"]
+[ext_resource type="Texture2D" uid="uid://coeq0g6qjf3ke" path="res://Assets/bar_small.png" id="6_tbesx"]
+[ext_resource type="Script" uid="uid://yhcme71vbs6h" path="res://Scripts/trail.gd" id="8_aimf7"]
+[ext_resource type="Texture2D" uid="uid://dpk81v3l8oafc" path="res://Assets/arc.png" id="8_k1cih"]
+[ext_resource type="Script" uid="uid://btg4jiotssqpu" path="res://Scripts/portal_booster.gd" id="8_xvpjn"]
+[ext_resource type="FontFile" uid="uid://cgqcpie0dkq2f" path="res://Assets/Fonts/MoveX-l72e.ttf" id="10_bp0in"]
+[ext_resource type="FontFile" uid="uid://duew6w55md6av" path="res://Assets/Fonts/Steelr-d95Yx.otf" id="10_f8nc4"]
+[ext_resource type="FontFile" uid="uid://bdbic0mq41ovx" path="res://Assets/Fonts/basis33.ttf" id="11_mnclx"]
+[ext_resource type="Texture2D" uid="uid://ebncu0nppwil" path="res://Assets/ring.png" id="17_htlui"]
+[ext_resource type="Texture2D" uid="uid://dg7txwojam70u" path="res://Assets/circle.png" id="18_6cumd"]
+[ext_resource type="AudioStream" uid="uid://cw0evf3a6lg5l" path="res://Assets/coin-drop-229314.mp3" id="18_r0nhu"]
+[ext_resource type="Texture2D" uid="uid://da0hl2qlt36q6" path="res://Assets/icons8-дешево-2-48.png" id="22_fjbo2"]
+[ext_resource type="Texture2D" uid="uid://cikxckmjyl4jc" path="res://Assets/icons8-трофей-48.png" id="23_c21i6"]
+[ext_resource type="FontFile" uid="uid://dkf5ufqigan01" path="res://Assets/Fonts/Sunday Donuts.ttf" id="24_u3s2f"]
+[ext_resource type="Script" uid="uid://brgsm2psnk48x" path="res://addons/SharePlugin/Share.gd" id="25_m3npa"]
+[ext_resource type="FontFile" uid="uid://vdjff6wuixot" path="res://Assets/Fonts/Comfy Feeling.otf" id="25_xm0y4"]
+[ext_resource type="Texture2D" uid="uid://cgv4vm68vriwx" path="res://Assets/icons8-info-48 (1).png" id="26_p8u5j"]
+[ext_resource type="FontFile" uid="uid://bf4yywgsoal1o" path="res://Assets/Fonts/Nova-nEZ0.ttf" id="27_0xbbe"]
+[ext_resource type="Script" uid="uid://dm50debiyylco" path="res://Scripts/share_result.gd" id="27_brbau"]
+[ext_resource type="AudioStream" uid="uid://oegrffdb1ny" path="res://Assets/explosion.wav" id="27_y2yli"]
+[ext_resource type="AudioStream" uid="uid://p1wokb7rcl8l" path="res://Assets/explosion (2).wav" id="28_81y3k"]
+[ext_resource type="Texture2D" uid="uid://cby0gdux02rb" path="res://Assets/sonicpng.png" id="28_uxajm"]
+[ext_resource type="Texture2D" uid="uid://ctmq17ablpkju" path="res://Assets/icons8-prize-48.png" id="28_wj3wc"]
+[ext_resource type="Texture2D" uid="uid://gg0183j4okwj" path="res://Assets/icons8-congratulation-48.png" id="29_ggod6"]
+[ext_resource type="Script" uid="uid://ehq54ayly6wp" path="res://Scripts/player_data.gd" id="31_x5xpw"]
+[ext_resource type="Texture2D" uid="uid://b8whktpvoow38" path="res://Assets/upgrade_bar.png" id="35_k86la"]
+[ext_resource type="Texture2D" uid="uid://cq3u2ok52krl5" path="res://Assets/icons8-upgrade-50.png" id="36_gggxx"]
+[ext_resource type="AudioStream" uid="uid://cls17c60taywp" path="res://Assets/click.wav" id="38_jey67"]
+[ext_resource type="AudioStream" uid="uid://cyh6pul2i8i5g" path="res://Assets/Milky-Way.mp3" id="41_n3g5y"]
+[ext_resource type="AudioStream" uid="uid://cefupjsdvf4cc" path="res://Assets/short-success-sound-glockenspiel-treasure-video-game-6346.mp3" id="42_y08lv"]
+[ext_resource type="AudioStream" uid="uid://dwro7o0pwfajs" path="res://Assets/Exploding Sun.mp3" id="43_n3g5y"]
+
+[sub_resource type="Pubkey" id="Pubkey_osbnw"]
+type = "CUSTOM"
+value = "FWHSfFuEjqTykwbdYk2NYWBZ22YEXvkCm1hFDbPyDcZp"
+bytes = PackedByteArray(215, 132, 13, 74, 176, 14, 96, 29, 231, 111, 17, 31, 122, 93, 17, 126, 83, 87, 111, 77, 149, 231, 160, 159, 97, 39, 120, 8, 223, 30, 164, 251)
+
+[sub_resource type="Pubkey" id="Pubkey_5hd00"]
+type = "CUSTOM"
+value = "ED5BmhZd5KPFTzDSv6r7Z6xB3CS5DGXEqKhVDntuPQwh"
+bytes = PackedByteArray(196, 63, 161, 238, 20, 240, 193, 28, 59, 155, 93, 252, 147, 42, 25, 209, 133, 203, 213, 146, 45, 178, 116, 222, 199, 40, 171, 189, 177, 182, 75, 112)
+
+[sub_resource type="CandyGuardAccessList" id="CandyGuardAccessList_a6gan"]
+top_level = false
+label = "chest"
+enable_token_payment = true
+token_payment_amount = 1000000000000
+token_payment_mint = SubResource("Pubkey_5hd00")
+token_payment_destination = SubResource("Pubkey_osbnw")
+
+[sub_resource type="CandyGuardAccessList" id="CandyGuardAccessList_o7aao"]
+groups = Array[CandyGuardAccessList]([SubResource("CandyGuardAccessList_a6gan")])
+
+[sub_resource type="LabelSettings" id="LabelSettings_waj5u"]
+font = ExtResource("11_mnclx")
+font_size = 22
+font_color = Color(1, 1, 0.909804, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kagmr"]
+font = ExtResource("10_bp0in")
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_mvj64"]
+font = ExtResource("10_bp0in")
+font_size = 32
+font_color = Color(1, 1, 0.6, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_a26e7"]
+font = ExtResource("10_f8nc4")
+font_size = 21
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_46yrp"]
+font = ExtResource("10_f8nc4")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yrajm"]
+font = ExtResource("10_bp0in")
+font_size = 64
+font_color = Color(0, 0, 0, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_um3ai"]
+font = ExtResource("10_bp0in")
+font_size = 42
+font_color = Color(1, 1, 0.6, 1)
+outline_size = 7
+outline_color = Color(0.87451, 0.807843, 0, 1)
+
+[sub_resource type="Theme" id="Theme_vgxlq"]
+default_font = ExtResource("10_f8nc4")
+default_font_size = 48
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hlwtf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dijwv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uvo15"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1qkrt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iyoj0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sj0cm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5axyw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_reiym"]
+
+[sub_resource type="Curve" id="Curve_2k4oh"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.512953, 0.67033), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_uttds"]
+offsets = PackedFloat32Array(0, 0.381818, 1)
+colors = PackedColorArray(0.650164, 0.540481, 0.250871, 0.470588, 0.968627, 0.890196, 0, 0.980392, 0.97, 0.889167, 0, 0.980392)
+
+[sub_resource type="LabelSettings" id="LabelSettings_iyo6v"]
+font = ExtResource("10_bp0in")
+font_size = 28
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4brg"]
+bg_color = Color(0, 0, 0, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f122l"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ateck"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5xmrj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3j0ru"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3w8m"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4vd8k"]
+bg_color = Color(1, 1, 1, 0.588235)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 5
+
+[sub_resource type="Curve" id="Curve_8clcw"]
+_data = [Vector2(0.00816326, 0.098901), 0.0, 0.0, 0, 0, Vector2(0.497959, 0.802198), 0.0, 0.0, 0, 0, Vector2(1, 0.230769), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cynbu"]
+radius = 11.0
+height = 54.0
+
+[sub_resource type="Curve" id="Curve_pamad"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.494737, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_y4rtt"]
+_data = [Vector2(0, 0.494505), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.505494), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_5necj"]
+offsets = PackedFloat32Array(0, 0.54, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ftbc0"]
+bg_color = Color(0, 0, 0.996078, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_exfkt"]
+font = ExtResource("10_f8nc4")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_pqlbx"]
+font = ExtResource("10_bp0in")
+font_size = 100
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6n6yq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l22w6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvcyl"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hvveb"]
+bg_color = Color(1, 1, 1, 0.588235)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4krg5"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xp33o"]
+bg_color = Color(1, 1, 1, 0.588235)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d1pk6"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ydx76"]
+bg_color = Color(1, 1, 1, 0.588235)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xqobo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rkqgv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yqxt6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s1v1l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7rr4t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ht1l8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(1, 0.8, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vw35x"]
+font = ExtResource("24_u3s2f")
+font_size = 28
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_og2e3"]
+font = ExtResource("24_u3s2f")
+font_size = 28
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dplbu"]
+font = ExtResource("24_u3s2f")
+font_size = 28
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yevw3"]
+font = ExtResource("25_xm0y4")
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p0ymq"]
+bg_color = Color(1, 0.8, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6lhfg"]
+font = ExtResource("25_xm0y4")
+font_size = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aerm2"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(1, 0.8, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qogsu"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ookna"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_cwyyv"]
+font = ExtResource("27_0xbbe")
+font_size = 26
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_g7620"]
+font = ExtResource("27_0xbbe")
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cilc0"]
+font = ExtResource("25_xm0y4")
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fm4et"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bs6vi"]
+font_size = 13
+
+[sub_resource type="LabelSettings" id="LabelSettings_ddedt"]
+font = ExtResource("10_f8nc4")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3fbwm"]
+font = ExtResource("10_f8nc4")
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pjrh"]
+bg_color = Color(0, 0, 0, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_eu66r"]
+font = ExtResource("11_mnclx")
+font_size = 29
+
+[sub_resource type="LabelSettings" id="LabelSettings_8vucm"]
+font = ExtResource("27_0xbbe")
+font_size = 39
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pkd6f"]
+font = ExtResource("27_0xbbe")
+font_size = 47
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_124wu"]
+bg_color = Color(0, 0, 0, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_imiss"]
+bg_color = Color(0.6, 0.6, 0.6, 0.196078)
+
+[sub_resource type="LabelSettings" id="LabelSettings_uhjbk"]
+font = ExtResource("10_f8nc4")
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Environment" id="Environment_1k486"]
+background_mode = 3
+glow_enabled = true
+glow_levels/3 = 4.0
+glow_levels/5 = 0.0
+glow_normalized = true
+glow_blend_mode = 1
+
+[node name="Map" type="Node2D"]
+script = ExtResource("1_42ewa")
+guard_settings = SubResource("CandyGuardAccessList_o7aao")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+process_mode = 3
+timeout = 5.0
+
+[node name="MplCandyMachine" type="MplCandyMachine" parent="."]
+url_override = "https://api.testnet.sonic.game"
+ws_url = "wss://api.testnet.sonic.game:443"
+
+[node name="MplTokenMetadata" type="MplTokenMetadata" parent="."]
+url_override = "https://api.testnet.sonic.game"
+ws_url = "wss://api.testnet.sonic.game:443"
+
+[node name="SolanaClient" type="SolanaClient" parent="."]
+url_override = "https://api.testnet.sonic.game"
+ws_url = "wss://api.testnet.sonic.game:443"
+process_mode = 3
+metadata/extra_seeds = "test1"
+metadata/game_owner = "orbWh48F9G6UBb5XstTreYGPpRNq9dqhxxdCefQuiws"
+
+[node name="AnchorProgram" type="AnchorProgram" parent="."]
+url_override = "https://api.testnet.sonic.game"
+pid = "orbSp1BEce8Tkiha55T6iWrZB2ZX1dipaCxiC5Bybub"
+idl = {
+"accounts": [{
+"name": "Leaderboard",
+"type": {
+"fields": [{
+"name": "players",
+"type": {
+"vec": {
+"defined": "Player"
+}
+}
+}],
+"kind": "struct"
+}
+}, {
+"name": "ProjectData",
+"type": {
+"fields": [{
+"name": "collectionMint",
+"type": "publicKey"
+}, {
+"name": "tokenMint",
+"type": "publicKey"
+}, {
+"name": "skinMintIndex",
+"type": "u32"
+}, {
+"name": "status",
+"type": "u8"
+}],
+"kind": "struct"
+}
+}],
+"errors": [{
+"code": 6000.0,
+"msg": "Unathorized access",
+"name": "Unauthorized"
+}, {
+"code": 6001.0,
+"msg": "Player not found",
+"name": "PlayerNotFound"
+}, {
+"code": 6002.0,
+"msg": "Username is too long",
+"name": "UsernameTooLong"
+}, {
+"code": 6003.0,
+"msg": "Maximum number of players reached",
+"name": "MaxPlayersReached"
+}, {
+"code": 6004.0,
+"msg": "No active game attempt",
+"name": "NoActiveTry"
+}, {
+"code": 6005.0,
+"msg": "Maximum number of upgrades reached",
+"name": "MaxUpgradesReached"
+}, {
+"code": 6006.0,
+"msg": "Insufficient tokens for upgrade",
+"name": "InsufficientTokens"
+}, {
+"code": 6007.0,
+"msg": "Player already exist",
+"name": "PlayerAlreadyExists"
+}, {
+"code": 6008.0,
+"msg": "Attempt bought already",
+"name": "GameAttemptAlreadyPurchased"
+}],
+"instructions": [{
+"accounts": [{
+"isMut": true,
+"isSigner": true,
+"name": "player"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "gameAuthority"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "systemProgram"
+}],
+"args": [],
+"name": "askForAirdrop"
+}, {
+"accounts": [{
+"isMut": true,
+"isSigner": true,
+"name": "owner"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "leaderboard"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "projectData"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "extraSeed"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "systemProgram"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "rent"
+}],
+"args": [],
+"name": "initializeProjectData"
+}, {
+"accounts": [{
+"isMut": true,
+"isSigner": true,
+"name": "owner"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "tokenMint"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "tokenMetadata"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "projectData"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "gameAuthority"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "extraSeed"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "systemProgram"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "tokenProgram"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "tokenMetadataProgram"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "associatedTokenProgram"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "rent"
+}],
+"args": [],
+"name": "initializeToken"
+}, {
+"accounts": [{
+"isMut": true,
+"isSigner": true,
+"name": "owner"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "collectionMint"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "collectionMetadata"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "collectionEdition"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "associatedTokenAccount"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "projectData"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "gameAuthority"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "extraSeed"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "systemProgram"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "tokenProgram"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "tokenMetadataProgram"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "associatedTokenProgram"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "rent"
+}],
+"args": [],
+"name": "initializeCollection"
+}, {
+"accounts": [{
+"isMut": true,
+"isSigner": true,
+"name": "player"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "owner"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "leaderboard"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "extraSeed"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "systemProgram"
+}],
+"args": [],
+"name": "newPlayer"
+}, {
+"accounts": [{
+"isMut": true,
+"isSigner": true,
+"name": "player"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "owner"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "leaderboard"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "extraSeed"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "systemProgram"
+}],
+"args": [],
+"name": "purchaseGameAttempt"
+}, {
+"accounts": [{
+"isMut": true,
+"isSigner": true,
+"name": "player"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "leaderboard"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "extraSeed"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "userTokenAccount"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "tokenMint"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "gameAuthority"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "tokenProgram"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "associatedTokenProgram"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "systemProgram"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "rent"
+}],
+"args": [{
+"name": "score",
+"type": "u64"
+}],
+"name": "writeResult"
+}, {
+"accounts": [{
+"isMut": true,
+"isSigner": true,
+"name": "player"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "userTokenAccount"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "projectOwnerTokenAccount"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "leaderboard"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "extraSeed"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "owner"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "tokenMint"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "gameAuthority"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "tokenProgram"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "associatedTokenProgram"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "systemProgram"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "rent"
+}],
+"args": [],
+"name": "buyUpgrade"
+}, {
+"accounts": [{
+"isMut": true,
+"isSigner": true,
+"name": "player"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "tokenMint"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "projectData"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "userTokenAccount"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "projectOwnerTokenAccount"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "owner"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "skinMint"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "userSkinTokenAccount"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "skinMetadata"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "skinEditionAccount"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "collectionMint"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "collectionMetadata"
+}, {
+"isMut": true,
+"isSigner": false,
+"name": "collectionMasterEdition"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "extraSeed"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "gameAuthority"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "tokenProgram"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "tokenMetadataProgram"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "associatedTokenProgram"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "systemProgram"
+}, {
+"isMut": false,
+"isSigner": false,
+"name": "rent"
+}],
+"args": [],
+"name": "purchaseRandomSkin"
+}],
+"name": "orbit_v2",
+"types": [{
+"name": "InitProjectParams",
+"type": {
+"fields": [{
+"name": "tokenDecimals",
+"type": "u8"
+}, {
+"name": "collectionName",
+"type": "string"
+}, {
+"name": "collectionSymbol",
+"type": "string"
+}, {
+"name": "collectionUri",
+"type": "string"
+}],
+"kind": "struct"
+}
+}, {
+"name": "Player",
+"type": {
+"fields": [{
+"name": "pubkey",
+"type": "publicKey"
+}, {
+"name": "lastScore",
+"type": "u64"
+}, {
+"name": "hasActiveTry",
+"type": "bool"
+}, {
+"name": "upgrades",
+"type": "u8"
+}],
+"kind": "struct"
+}
+}],
+"version": "0.1.0"
+}
+
+[node name="DeadLine" type="Area2D" parent="." groups=["dead_line"]]
+z_index = 999
+z_as_relative = false
+position = Vector2(0, 1500)
+script = ExtResource("2_bj2tr")
+
+[node name="Cleaner" type="Node2D" parent="."]
+script = ExtResource("2_ufpk0")
+
+[node name="BoosterSpawner" type="Timer" parent="."]
+autostart = true
+script = ExtResource("2_88jfv")
+star_scene = ExtResource("3_tkx2u")
+
+[node name="CoinSpawner" type="Timer" parent="."]
+autostart = true
+script = ExtResource("2_rns3t")
+coin_scene = ExtResource("3_x1nw0")
+
+[node name="ObstacleSpawner" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="PortalBooster" type="Timer" parent="."]
+autostart = true
+script = ExtResource("8_xvpjn")
+star_scene = ExtResource("5_pwqop")
+
+[node name="Comets" type="CanvasLayer" parent="."]
+layer = -1
+follow_viewport_enabled = true
+
+[node name="Meteorites" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Satallites" type="CanvasLayer" parent="."]
+layer = -1
+follow_viewport_enabled = true
+
+[node name="PlayerData" type="Node" parent="."]
+script = ExtResource("31_x5xpw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Player" type="CanvasLayer" parent="."]
+visible = false
+follow_viewport_enabled = true
+
+[node name="Player" type="Area2D" parent="Player"]
+process_mode = 3
+script = ExtResource("1_08nsy")
+
+[node name="Arc" type="Sprite2D" parent="Player/Player"]
+visible = false
+modulate = Color(0.156863, 0.564706, 0.937255, 0)
+position = Vector2(0, -20)
+scale = Vector2(1, 2)
+texture = ExtResource("8_k1cih")
+
+[node name="Arc2" type="Sprite2D" parent="Player/Player"]
+visible = false
+self_modulate = Color(1, 1, 0.596078, 1)
+position = Vector2(3.8147e-06, -27.4167)
+scale = Vector2(1.375, 1.45833)
+texture = ExtResource("8_k1cih")
+
+[node name="Rocket" type="Sprite2D" parent="Player/Player"]
+texture = ExtResource("2_s1r1w")
+
+[node name="Camera2D" type="Camera2D" parent="Player/Player"]
+
+[node name="UI" type="CanvasLayer" parent="Player/Player"]
+visible = false
+
+[node name="Label" type="Label" parent="Player/Player/UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -519.0
+offset_top = 418.0
+offset_right = -28.0
+offset_bottom = 475.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "$sonic-orbit: fly only up, collect rings and stars!"
+label_settings = SubResource("LabelSettings_waj5u")
+
+[node name="VirtualJoystick" type="Control" parent="Player/Player/UI"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -125.0
+offset_top = -420.0
+offset_right = 125.0
+offset_bottom = -170.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("3_i52uu")
+clampzone_size = 100.0
+
+[node name="Base" type="TextureRect" parent="Player/Player/UI/VirtualJoystick"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(100, 100)
+mouse_force_pass_scroll_events = false
+texture = ExtResource("4_1yl7m")
+stretch_mode = 5
+
+[node name="Tip" type="TextureRect" parent="Player/Player/UI/VirtualJoystick/Base"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(50, 50)
+texture = ExtResource("5_4wnms")
+stretch_mode = 5
+
+[node name="InvincibleBar" type="Control" parent="Player/Player/UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.0
+offset_top = 211.0
+offset_right = 30.0
+offset_bottom = 271.0
+grow_horizontal = 2
+
+[node name="BoosterTimer" type="Timer" parent="Player/Player/UI/InvincibleBar"]
+wait_time = 1.5
+one_shot = true
+
+[node name="Bar" type="TextureProgressBar" parent="Player/Player/UI/InvincibleBar"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 60.0
+offset_right = 120.0
+offset_bottom = 120.0
+rotation = 3.14159
+value = 60.0
+fill_mode = 8
+texture_under = ExtResource("6_tbesx")
+texture_progress = ExtResource("6_tbesx")
+tint_under = Color(0.541176, 0.541176, 0.541176, 0)
+tint_progress = Color(0.156863, 0.564706, 0.937255, 1)
+
+[node name="BarTimer" type="Timer" parent="Player/Player/UI/InvincibleBar"]
+wait_time = 0.2
+
+[node name="Score" type="Label" parent="Player/Player/UI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -26.0
+offset_top = 131.0
+offset_right = 26.0
+offset_bottom = 207.0
+grow_horizontal = 2
+text = "0
+"
+label_settings = SubResource("LabelSettings_kagmr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Coins" type="Label" parent="Player/Player/UI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -29.0
+offset_top = 67.0
+offset_right = 155.0
+offset_bottom = 106.0
+grow_horizontal = 2
+text = "0"
+label_settings = SubResource("LabelSettings_mvj64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DeadControl" type="CanvasLayer" parent="Player/Player/UI"]
+layer = 5
+visible = false
+
+[node name="Control" type="Control" parent="Player/Player/UI/DeadControl"]
+modulate = Color(1, 1, 1, 0)
+z_index = 10
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cost" type="Label" parent="Player/Player/UI/DeadControl/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -226.0
+offset_top = 322.0
+offset_right = 226.0
+offset_bottom = 369.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You will get 0 Orbitals!"
+label_settings = SubResource("LabelSettings_a26e7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Info" type="Label" parent="Player/Player/UI/DeadControl/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -281.0
+offset_top = -400.0
+offset_right = 281.0
+offset_bottom = -223.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You can save the result to get a place in the Leaderboard and receive tokens, but if you are not satisfied with this result, you can retry this attempt. "
+label_settings = SubResource("LabelSettings_46yrp")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Score" type="Label" parent="Player/Player/UI/DeadControl/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -38.0
+offset_right = 26.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_yrajm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Coins" type="Label" parent="Player/Player/UI/DeadControl/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 96.0
+offset_right = 20.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_um3ai")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Save" type="Button" parent="Player/Player/UI/DeadControl/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -168.5
+offset_top = 203.0
+offset_right = 168.5
+offset_bottom = 297.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+theme = SubResource("Theme_vgxlq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0.230315, 0.230315, 0.230315, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hlwtf")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_dijwv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_uvo15")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_1qkrt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_iyoj0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_sj0cm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5axyw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_reiym")
+text = "Save"
+
+[node name="Skip" type="Button" parent="Player/Player/UI/DeadControl/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -168.5
+offset_top = 452.0
+offset_right = 168.5
+offset_bottom = 546.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+theme = SubResource("Theme_vgxlq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0.230315, 0.230315, 0.230315, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hlwtf")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_dijwv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_uvo15")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_1qkrt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_iyoj0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_sj0cm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5axyw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_reiym")
+text = "replay
+"
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="Player/Player/UI/DeadControl/Control"]
+position = Vector2(20, 134)
+emitting = false
+amount = 100
+texture = ExtResource("17_htlui")
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(20, 20)
+spread = 180.0
+gravity = Vector2(0, -100)
+initial_velocity_min = 25.0
+initial_velocity_max = 50.0
+scale_amount_curve = SubResource("Curve_2k4oh")
+color_ramp = SubResource("Gradient_uttds")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Player/Player/UI/DeadControl/Control"]
+stream = ExtResource("18_r0nhu")
+
+[node name="Plus" type="Label" parent="Player/Player/UI/DeadControl/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 18.0
+offset_top = -66.0
+offset_right = 79.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_iyo6v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel3" type="Panel" parent="Player/Player/UI/DeadControl/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.0
+offset_top = -507.0
+offset_right = 348.0
+offset_bottom = -500.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4brg")
+
+[node name="Panel2" type="Panel" parent="Player/Player/UI/DeadControl/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -340.0
+offset_top = -440.0
+offset_right = 405.0
+offset_bottom = -243.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f122l")
+
+[node name="Panel" type="Panel" parent="Player/Player/UI/DeadControl/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -375.0
+offset_top = -473.0
+offset_right = 375.0
+offset_bottom = -273.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ateck")
+
+[node name="ColorRect" type="ColorRect" parent="Player/Player/UI/DeadControl/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -377.0
+offset_top = -483.0
+offset_right = -351.0
+offset_bottom = -428.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Player/Player/UI/DeadControl/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -410.0
+offset_top = -497.0
+offset_right = -362.0
+offset_bottom = -449.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.76, 1.76)
+texture = ExtResource("26_p8u5j")
+
+[node name="Info2" type="Button" parent="Player/Player/UI/DeadControl/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -355.0
+offset_top = -502.0
+offset_right = 355.0
+offset_bottom = -246.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme = SubResource("Theme_vgxlq")
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("11_mnclx")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hlwtf")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_dijwv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_uvo15")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_1qkrt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_iyoj0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_sj0cm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5axyw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5xmrj")
+text = "You can save the result to get a place in the Leaderboard and receive tokens, but if you are not satisfied with this result, you can replay this attempt. "
+autowrap_mode = 2
+
+[node name="ParcTimer" type="Timer" parent="Player/Player/UI/DeadControl/Control"]
+process_mode = 3
+wait_time = 4.0
+one_shot = true
+
+[node name="SaveResult" type="Button" parent="Player/Player/UI/DeadControl/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = 221.0
+offset_right = 175.0
+offset_bottom = 321.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme = SubResource("Theme_vgxlq")
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_bp0in")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hlwtf")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_3j0ru")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p3w8m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4vd8k")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3j0ru")
+text = "Save result"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Player/Player/UI/DeadControl/Control/SaveResult"]
+position = Vector2(175, 805)
+emitting = false
+amount = 250
+texture = ExtResource("22_fjbo2")
+lifetime = 5.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(500, 50)
+spread = 180.0
+gravity = Vector2(0, -100)
+initial_velocity_min = 15.0
+initial_velocity_max = 30.0
+angle_min = -25.0
+angle_max = 25.0
+scale_amount_min = 0.6
+scale_amount_curve = SubResource("Curve_8clcw")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="Player/Player/UI/DeadControl/Control/SaveResult"]
+position = Vector2(175, 803)
+emitting = false
+amount = 150
+texture = ExtResource("23_c21i6")
+lifetime = 5.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(500, 50)
+spread = 180.0
+gravity = Vector2(0, -100)
+initial_velocity_min = 15.0
+initial_velocity_max = 30.0
+angle_min = -25.0
+angle_max = 25.0
+scale_amount_min = 0.6
+scale_amount_curve = SubResource("Curve_8clcw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Player"]
+shape = SubResource("CapsuleShape2D_cynbu")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Player/Player"]
+visible = false
+position = Vector2(0, 24)
+emitting = false
+amount = 50
+texture = ExtResource("1_sqq7f")
+randomness = 1.0
+lifetime_randomness = 1.0
+direction = Vector2(0, 1)
+scale_amount_min = 0.0
+scale_amount_max = 0.05
+
+[node name="Trail" type="Line2D" parent="Player/Player"]
+visible = false
+top_level = true
+width = 5.0
+width_curve = SubResource("Curve_pamad")
+script = ExtResource("8_aimf7")
+MAX_LENGTH = 100
+
+[node name="Tail" type="Marker2D" parent="Player/Player"]
+visible = false
+position = Vector2(0, 29)
+
+[node name="ShadowTimer" type="Timer" parent="Player/Player"]
+wait_time = 0.05
+autostart = true
+
+[node name="dead_screen" type="Sprite2D" parent="Player/Player"]
+visible = false
+z_index = 10
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("18_6cumd")
+
+[node name="Stars" type="CPUParticles2D" parent="Player/Player"]
+visible = false
+show_behind_parent = true
+z_index = -999
+z_as_relative = false
+amount = 250
+texture = ExtResource("5_4wnms")
+lifetime = 8.0
+emission_shape = 3
+emission_rect_extents = Vector2(1500, 1500)
+gravity = Vector2(0, 0)
+scale_amount_min = 0.07
+scale_amount_max = 0.07
+scale_amount_curve = SubResource("Curve_y4rtt")
+color_ramp = SubResource("Gradient_5necj")
+
+[node name="Die" type="AudioStreamPlayer" parent="Player/Player"]
+stream = ExtResource("27_y2yli")
+pitch_scale = 0.5
+
+[node name="Die2" type="AudioStreamPlayer" parent="Player/Player"]
+stream = ExtResource("28_81y3k")
+volume_db = -8.0
+pitch_scale = 0.75
+
+[node name="MainMenu" type="CanvasLayer" parent="."]
+layer = 50
+
+[node name="Wallet" type="Label" parent="MainMenu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -862.0
+offset_right = 200.0
+offset_bottom = -787.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_ftbc0")
+text = "                     Your wallet: "
+label_settings = SubResource("LabelSettings_exfkt")
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/Wallet"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 360.0
+offset_top = -11.0
+offset_right = 460.0
+offset_bottom = 89.0
+grow_horizontal = 2
+texture = ExtResource("28_uxajm")
+expand_mode = 3
+
+[node name="StartGame" type="CanvasLayer" parent="MainMenu"]
+layer = 10
+visible = false
+
+[node name="Label" type="Label" parent="MainMenu/StartGame"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -396.5
+offset_top = -272.0
+offset_right = 396.5
+offset_bottom = -153.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "O    R    B    I    T"
+label_settings = SubResource("LabelSettings_pqlbx")
+
+[node name="Start" type="Button" parent="MainMenu/StartGame"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.5
+offset_top = -47.0
+offset_right = 114.5
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme = SubResource("Theme_vgxlq")
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.588235)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0.230315, 0.230315, 0.230315, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hlwtf")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6n6yq")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_dijwv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_uvo15")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_1qkrt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_iyoj0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_sj0cm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5axyw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5xmrj")
+disabled = true
+text = "start"
+
+[node name="BuyTry" type="Button" parent="MainMenu/StartGame"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.0
+offset_top = 37.0
+offset_right = 310.0
+offset_bottom = 131.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme = SubResource("Theme_vgxlq")
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.588235)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 0)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0.230315, 0.230315, 0.230315, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hlwtf")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_l22w6")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_dijwv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_uvo15")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_1qkrt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_iyoj0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_sj0cm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5axyw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5xmrj")
+disabled = true
+text = "..."
+
+[node name="Table" type="Button" parent="MainMenu/StartGame"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = 222.0
+offset_right = 175.0
+offset_bottom = 322.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme = SubResource("Theme_vgxlq")
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_bp0in")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hlwtf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gvcyl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hvveb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gvcyl")
+text = "Leaderboard"
+
+[node name="Rockets" type="Button" parent="MainMenu/StartGame"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = 347.0
+offset_right = 175.0
+offset_bottom = 447.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme = SubResource("Theme_vgxlq")
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_bp0in")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hlwtf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4krg5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xp33o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4krg5")
+text = "Rockets"
+
+[node name="Upgrades" type="Button" parent="MainMenu/StartGame"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = 472.0
+offset_right = 175.0
+offset_bottom = 572.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme = SubResource("Theme_vgxlq")
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_bp0in")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hlwtf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4krg5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xp33o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4krg5")
+text = "Upgrades"
+
+[node name="Info" type="Button" parent="MainMenu/StartGame"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = 597.0
+offset_right = 175.0
+offset_bottom = 697.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme = SubResource("Theme_vgxlq")
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_bp0in")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hlwtf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d1pk6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ydx76")
+theme_override_styles/normal = SubResource("StyleBoxFlat_d1pk6")
+text = "Information"
+
+[node name="NotRegistered" type="CanvasLayer" parent="MainMenu"]
+layer = 10
+visible = false
+
+[node name="Reg" type="Button" parent="MainMenu/NotRegistered"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.5
+offset_top = -58.0
+offset_right = 114.5
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme = SubResource("Theme_vgxlq")
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.588235)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0.230315, 0.230315, 0.230315, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hlwtf")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_xqobo")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rkqgv")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_dijwv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_uvo15")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_1qkrt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_iyoj0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_sj0cm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5axyw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5xmrj")
+text = "Register"
+
+[node name="Panel3" type="Panel" parent="MainMenu/NotRegistered"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.0
+offset_top = -507.0
+offset_right = 348.0
+offset_bottom = -500.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4brg")
+
+[node name="Panel2" type="Panel" parent="MainMenu/NotRegistered"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -340.0
+offset_top = -440.0
+offset_right = 402.0
+offset_bottom = -298.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f122l")
+
+[node name="Panel" type="Panel" parent="MainMenu/NotRegistered"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -375.0
+offset_top = -473.0
+offset_right = 375.0
+offset_bottom = -324.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ateck")
+
+[node name="ColorRect" type="ColorRect" parent="MainMenu/NotRegistered"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -377.0
+offset_top = -483.0
+offset_right = -351.0
+offset_bottom = -428.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/NotRegistered"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -410.0
+offset_top = -497.0
+offset_right = -362.0
+offset_bottom = -449.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.76, 1.76)
+texture = ExtResource("26_p8u5j")
+
+[node name="Info" type="Button" parent="MainMenu/NotRegistered"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -355.0
+offset_top = -525.0
+offset_right = 355.0
+offset_bottom = -269.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme = SubResource("Theme_vgxlq")
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("11_mnclx")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hlwtf")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_dijwv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_uvo15")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_1qkrt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_iyoj0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_sj0cm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5axyw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5xmrj")
+text = "In order to be eligible to play this game, you need to register for 0.01 SOL
+"
+autowrap_mode = 2
+
+[node name="Error" type="CanvasLayer" parent="MainMenu"]
+layer = 10
+visible = false
+
+[node name="Info" type="Button" parent="MainMenu/Error"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -470.5
+offset_top = 1223.0
+offset_right = 470.5
+offset_bottom = 1465.0
+grow_horizontal = 2
+focus_mode = 0
+theme = SubResource("Theme_vgxlq")
+theme_override_colors/font_disabled_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_f8nc4")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hlwtf")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_dijwv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_uvo15")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_1qkrt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_iyoj0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_sj0cm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5axyw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5xmrj")
+text = "Some error occurred:"
+autowrap_mode = 2
+
+[node name="Info" type="CanvasLayer" parent="MainMenu"]
+visible = false
+
+[node name="Panel3" type="Panel" parent="MainMenu/Info"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.0
+offset_top = -609.0
+offset_right = 417.0
+offset_bottom = -602.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4brg")
+
+[node name="Panel2" type="Panel" parent="MainMenu/Info"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -352.0
+offset_top = -557.0
+offset_right = 516.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f122l")
+
+[node name="Panel" type="Panel" parent="MainMenu/Info"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -490.0
+offset_top = -583.0
+offset_right = 490.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ateck")
+
+[node name="ColorRect" type="ColorRect" parent="MainMenu/Info"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -488.0
+offset_top = -585.0
+offset_right = -462.0
+offset_bottom = -530.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/Info"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -521.0
+offset_top = -599.0
+offset_right = -473.0
+offset_bottom = -551.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.76, 1.76)
+texture = ExtResource("26_p8u5j")
+
+[node name="Info" type="Button" parent="MainMenu/Info"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -455.0
+offset_top = -749.0
+offset_right = 460.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme = SubResource("Theme_vgxlq")
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("11_mnclx")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hlwtf")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_dijwv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_uvo15")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_1qkrt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_iyoj0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_sj0cm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5axyw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5xmrj")
+text = "   → Main information:
+* Each attempt costs 0.005 SOL;
+* At the end of each attempt, you have the right to either save the result or replay the attempt.
+
+   → Game:
+* The main mission of the game is to fly uphill and avoid obstacles (comets, meteorites, stars, satellites, etc.);
+* Each ring is +10 points that will be converted at the end of the attempt;
+* Each kilometer flown is 1 point;
+* Each point is 1 Orbitales tokens;
+
+   → Leaderboard:
+* At the end of each week, the top 10 people will receive refback from paid attempts and bonus tokens."
+alignment = 0
+autowrap_mode = 2
+
+[node name="CloseInfo" type="Button" parent="MainMenu/Info"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.5
+offset_top = 823.0
+offset_right = 51.5
+offset_bottom = 871.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0.67451)
+theme_override_fonts/font = ExtResource("10_bp0in")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_s1v1l")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7rr4t")
+text = "back"
+
+[node name="Table" type="CanvasLayer" parent="MainMenu"]
+visible = false
+
+[node name="S" type="SubViewport" parent="MainMenu/Table"]
+size = Vector2i(800, 1000)
+size_2d_override = Vector2i(800, 1250)
+render_target_update_mode = 4
+
+[node name="Screen" type="Panel" parent="MainMenu/Table/S"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -624.0
+offset_right = 400.0
+offset_bottom = 376.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ht1l8")
+
+[node name="row1" type="Panel" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -305.5
+offset_right = 350.0
+offset_bottom = -302.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4brg")
+
+[node name="row2" type="Panel" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -255.5
+offset_right = 350.0
+offset_bottom = -252.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4brg")
+
+[node name="row3" type="Panel" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -205.5
+offset_right = 350.0
+offset_bottom = -202.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4brg")
+
+[node name="row4" type="Panel" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -155.5
+offset_right = 350.0
+offset_bottom = -152.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4brg")
+
+[node name="row5" type="Panel" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -105.5
+offset_right = 350.0
+offset_bottom = -102.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4brg")
+
+[node name="row6" type="Panel" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -55.5
+offset_right = 350.0
+offset_bottom = -52.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4brg")
+
+[node name="row7" type="Panel" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -5.5
+offset_right = 350.0
+offset_bottom = -2.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4brg")
+
+[node name="row8" type="Panel" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = 44.5
+offset_right = 350.0
+offset_bottom = 47.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4brg")
+
+[node name="row9" type="Panel" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = 94.5
+offset_right = 350.0
+offset_bottom = 97.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4brg")
+
+[node name="row10" type="Panel" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = 144.5
+offset_right = 350.0
+offset_bottom = 147.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4brg")
+
+[node name="row11" type="Panel" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = 194.5
+offset_right = 350.0
+offset_bottom = 197.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4brg")
+
+[node name="row12" type="Panel" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = 330.0
+offset_right = 260.0
+offset_bottom = 333.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4brg")
+
+[node name="Address" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.5
+offset_top = -344.5
+offset_right = 51.5
+offset_bottom = -314.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "address"
+label_settings = SubResource("LabelSettings_vw35x")
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 194.0
+offset_top = -344.5
+offset_right = 266.0
+offset_bottom = -314.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "score"
+label_settings = SubResource("LabelSettings_og2e3")
+
+[node name="Label" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.0
+offset_top = -343.5
+offset_right = -208.0
+offset_bottom = -313.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "#id"
+label_settings = SubResource("LabelSettings_dplbu")
+
+[node name="address1" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.0
+offset_top = -293.0
+offset_right = 58.0
+offset_bottom = -267.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "None..."
+horizontal_alignment = 1
+
+[node name="address2" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -243.0
+offset_right = 71.0
+offset_bottom = -217.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "None..."
+horizontal_alignment = 1
+
+[node name="address3" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -193.0
+offset_right = 71.0
+offset_bottom = -167.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "None..."
+horizontal_alignment = 1
+
+[node name="address4" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -143.0
+offset_right = 71.0
+offset_bottom = -117.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "None..."
+horizontal_alignment = 1
+
+[node name="address5" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -93.0
+offset_right = 71.0
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "None..."
+horizontal_alignment = 1
+
+[node name="address6" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -43.0
+offset_right = 71.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "None..."
+horizontal_alignment = 1
+
+[node name="address7" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = 7.0
+offset_right = 71.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "None..."
+horizontal_alignment = 1
+
+[node name="address8" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = 57.0
+offset_right = 71.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "None..."
+horizontal_alignment = 1
+
+[node name="address9" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = 107.0
+offset_right = 71.0
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "None..."
+horizontal_alignment = 1
+
+[node name="address10" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = 157.0
+offset_right = 71.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "None..."
+horizontal_alignment = 1
+
+[node name="address11" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = 292.5
+offset_right = 71.0
+offset_bottom = 318.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "None..."
+horizontal_alignment = 1
+
+[node name="id1" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = -293.0
+offset_right = -159.0
+offset_bottom = -267.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "1"
+horizontal_alignment = 1
+
+[node name="id2" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = -243.0
+offset_right = -159.0
+offset_bottom = -217.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "2"
+horizontal_alignment = 1
+
+[node name="id3" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = -193.0
+offset_right = -159.0
+offset_bottom = -167.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "3"
+horizontal_alignment = 1
+
+[node name="id4" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = -143.0
+offset_right = -159.0
+offset_bottom = -117.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "4"
+horizontal_alignment = 1
+
+[node name="id5" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = -93.0
+offset_right = -159.0
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "5"
+horizontal_alignment = 1
+
+[node name="id6" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = -43.0
+offset_right = -159.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "6"
+horizontal_alignment = 1
+
+[node name="id7" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = 7.0
+offset_right = -159.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "7"
+horizontal_alignment = 1
+
+[node name="id8" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = 57.0
+offset_right = -159.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "8"
+horizontal_alignment = 1
+
+[node name="id9" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = 107.0
+offset_right = -159.0
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "9"
+horizontal_alignment = 1
+
+[node name="id10" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = 157.0
+offset_right = -159.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "10"
+horizontal_alignment = 1
+
+[node name="id11" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -238.0
+offset_top = 292.5
+offset_right = -99.0
+offset_bottom = 318.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "id?"
+horizontal_alignment = 1
+
+[node name="score1" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 173.0
+offset_top = -293.0
+offset_right = 286.0
+offset_bottom = -267.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "#####"
+horizontal_alignment = 1
+
+[node name="score2" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 173.0
+offset_top = -243.0
+offset_right = 286.0
+offset_bottom = -217.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "#####"
+horizontal_alignment = 1
+
+[node name="score3" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 173.0
+offset_top = -193.0
+offset_right = 286.0
+offset_bottom = -167.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "#####"
+horizontal_alignment = 1
+
+[node name="score4" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 173.0
+offset_top = -143.0
+offset_right = 286.0
+offset_bottom = -117.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "#####"
+horizontal_alignment = 1
+
+[node name="score5" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 173.0
+offset_top = -93.0
+offset_right = 286.0
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "#####"
+horizontal_alignment = 1
+
+[node name="score6" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 173.0
+offset_top = -43.0
+offset_right = 286.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "#####"
+horizontal_alignment = 1
+
+[node name="score7" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 173.0
+offset_top = 7.0
+offset_right = 286.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "#####"
+horizontal_alignment = 1
+
+[node name="score8" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 173.0
+offset_top = 57.0
+offset_right = 286.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "#####"
+horizontal_alignment = 1
+
+[node name="score9" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 173.0
+offset_top = 107.0
+offset_right = 286.0
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "#####"
+horizontal_alignment = 1
+
+[node name="score10" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 173.0
+offset_top = 157.0
+offset_right = 286.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "#####"
+horizontal_alignment = 1
+
+[node name="score11" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 148.0
+offset_top = 292.5
+offset_right = 261.0
+offset_bottom = 318.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "#####"
+horizontal_alignment = 1
+
+[node name="tag1" type="Label" parent="MainMenu/Table/S/Screen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -367.0
+offset_top = -293.5
+offset_right = -228.0
+offset_bottom = -267.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.807843, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.811765, 0.0980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "YOU"
+horizontal_alignment = 1
+
+[node name="tag2" type="Label" parent="MainMenu/Table/S/Screen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -367.0
+offset_top = -243.5
+offset_right = -228.0
+offset_bottom = -217.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.807843, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.811765, 0.0980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "YOU"
+horizontal_alignment = 1
+
+[node name="tag3" type="Label" parent="MainMenu/Table/S/Screen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -367.0
+offset_top = -193.5
+offset_right = -228.0
+offset_bottom = -167.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.807843, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.811765, 0.0980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "YOU"
+horizontal_alignment = 1
+
+[node name="tag4" type="Label" parent="MainMenu/Table/S/Screen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -367.0
+offset_top = -143.5
+offset_right = -228.0
+offset_bottom = -117.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.807843, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.811765, 0.0980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "YOU"
+horizontal_alignment = 1
+
+[node name="tag5" type="Label" parent="MainMenu/Table/S/Screen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -367.0
+offset_top = -93.5
+offset_right = -228.0
+offset_bottom = -67.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.807843, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.811765, 0.0980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "YOU"
+horizontal_alignment = 1
+
+[node name="tag6" type="Label" parent="MainMenu/Table/S/Screen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -367.0
+offset_top = -43.5
+offset_right = -228.0
+offset_bottom = -17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.807843, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.811765, 0.0980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "YOU"
+horizontal_alignment = 1
+
+[node name="tag7" type="Label" parent="MainMenu/Table/S/Screen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -367.0
+offset_top = 6.5
+offset_right = -228.0
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.807843, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.811765, 0.0980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "YOU"
+horizontal_alignment = 1
+
+[node name="tag8" type="Label" parent="MainMenu/Table/S/Screen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -367.0
+offset_top = 56.5
+offset_right = -228.0
+offset_bottom = 82.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.807843, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.811765, 0.0980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "YOU"
+horizontal_alignment = 1
+
+[node name="tag9" type="Label" parent="MainMenu/Table/S/Screen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -367.0
+offset_top = 106.5
+offset_right = -228.0
+offset_bottom = 132.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.807843, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.811765, 0.0980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "YOU"
+horizontal_alignment = 1
+
+[node name="tag10" type="Label" parent="MainMenu/Table/S/Screen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -367.0
+offset_top = 156.5
+offset_right = -228.0
+offset_bottom = 182.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.807843, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.811765, 0.0980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "YOU"
+horizontal_alignment = 1
+
+[node name="tag11" type="Label" parent="MainMenu/Table/S/Screen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -346.0
+offset_top = 292.0
+offset_right = -207.0
+offset_bottom = 318.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.807843, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.811765, 0.0980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "YOU"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -129.0
+offset_top = 51.0
+offset_right = 129.0
+offset_bottom = 113.0
+grow_horizontal = 2
+text = "Leaderboard"
+label_settings = SubResource("LabelSettings_yevw3")
+
+[node name="Label3" type="Label" parent="MainMenu/Table/S/Screen"]
+layout_mode = 0
+offset_left = 5.00001
+offset_top = 982.0
+offset_right = 1005.0
+offset_bottom = 1091.0
+rotation = -0.261799
+theme_override_styles/normal = SubResource("StyleBoxFlat_p0ymq")
+text = "Top-10 will receive 
+REWARDS!!!"
+label_settings = SubResource("LabelSettings_6lhfg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Screen" type="Panel" parent="MainMenu/Table"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -700.0
+offset_right = 400.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_aerm2")
+
+[node name="row1" type="Panel" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -305.5
+offset_right = 350.0
+offset_bottom = -302.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4brg")
+
+[node name="row2" type="Panel" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -255.5
+offset_right = 350.0
+offset_bottom = -252.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4brg")
+
+[node name="row3" type="Panel" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -205.5
+offset_right = 350.0
+offset_bottom = -202.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4brg")
+
+[node name="row4" type="Panel" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -155.5
+offset_right = 350.0
+offset_bottom = -152.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4brg")
+
+[node name="row5" type="Panel" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -105.5
+offset_right = 350.0
+offset_bottom = -102.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4brg")
+
+[node name="row6" type="Panel" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -55.5
+offset_right = 350.0
+offset_bottom = -52.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4brg")
+
+[node name="row7" type="Panel" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -5.5
+offset_right = 350.0
+offset_bottom = -2.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4brg")
+
+[node name="row8" type="Panel" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = 44.5
+offset_right = 350.0
+offset_bottom = 47.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4brg")
+
+[node name="row9" type="Panel" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = 94.5
+offset_right = 350.0
+offset_bottom = 97.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4brg")
+
+[node name="row10" type="Panel" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = 144.5
+offset_right = 350.0
+offset_bottom = 147.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4brg")
+
+[node name="row11" type="Panel" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = 194.5
+offset_right = 350.0
+offset_bottom = 197.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4brg")
+
+[node name="row12" type="Panel" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = 330.0
+offset_right = 260.0
+offset_bottom = 333.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4brg")
+
+[node name="Address" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.5
+offset_top = -344.5
+offset_right = 51.5
+offset_bottom = -314.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "address"
+label_settings = SubResource("LabelSettings_vw35x")
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 194.0
+offset_top = -344.5
+offset_right = 266.0
+offset_bottom = -314.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "score"
+label_settings = SubResource("LabelSettings_og2e3")
+
+[node name="Label" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.0
+offset_top = -343.5
+offset_right = -208.0
+offset_bottom = -313.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "#id"
+label_settings = SubResource("LabelSettings_dplbu")
+
+[node name="address1" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.0
+offset_top = -293.0
+offset_right = 58.0
+offset_bottom = -267.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "None..."
+horizontal_alignment = 1
+
+[node name="address2" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -243.0
+offset_right = 71.0
+offset_bottom = -217.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "None..."
+horizontal_alignment = 1
+
+[node name="address3" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -193.0
+offset_right = 71.0
+offset_bottom = -167.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "None..."
+horizontal_alignment = 1
+
+[node name="address4" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -143.0
+offset_right = 71.0
+offset_bottom = -117.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "None..."
+horizontal_alignment = 1
+
+[node name="address5" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -93.0
+offset_right = 71.0
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "None..."
+horizontal_alignment = 1
+
+[node name="address6" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -43.0
+offset_right = 71.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "None..."
+horizontal_alignment = 1
+
+[node name="address7" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = 7.0
+offset_right = 71.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "None..."
+horizontal_alignment = 1
+
+[node name="address8" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = 57.0
+offset_right = 71.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "None..."
+horizontal_alignment = 1
+
+[node name="address9" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = 107.0
+offset_right = 71.0
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "None..."
+horizontal_alignment = 1
+
+[node name="address10" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = 157.0
+offset_right = 71.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "None..."
+horizontal_alignment = 1
+
+[node name="address11" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = 292.5
+offset_right = 71.0
+offset_bottom = 318.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "None..."
+horizontal_alignment = 1
+
+[node name="id1" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = -293.0
+offset_right = -159.0
+offset_bottom = -267.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "1"
+horizontal_alignment = 1
+
+[node name="id2" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = -243.0
+offset_right = -159.0
+offset_bottom = -217.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "2"
+horizontal_alignment = 1
+
+[node name="id3" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = -193.0
+offset_right = -159.0
+offset_bottom = -167.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "3"
+horizontal_alignment = 1
+
+[node name="id4" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = -143.0
+offset_right = -159.0
+offset_bottom = -117.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "4"
+horizontal_alignment = 1
+
+[node name="id5" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = -93.0
+offset_right = -159.0
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "5"
+horizontal_alignment = 1
+
+[node name="id6" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = -43.0
+offset_right = -159.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "6"
+horizontal_alignment = 1
+
+[node name="id7" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = 7.0
+offset_right = -159.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "7"
+horizontal_alignment = 1
+
+[node name="id8" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = 57.0
+offset_right = -159.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "8"
+horizontal_alignment = 1
+
+[node name="id9" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = 107.0
+offset_right = -159.0
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "9"
+horizontal_alignment = 1
+
+[node name="id10" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = 157.0
+offset_right = -159.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "10"
+horizontal_alignment = 1
+
+[node name="id11" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -238.0
+offset_top = 292.5
+offset_right = -99.0
+offset_bottom = 318.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "id?"
+horizontal_alignment = 1
+
+[node name="score1" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 173.0
+offset_top = -293.0
+offset_right = 286.0
+offset_bottom = -267.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "#####"
+horizontal_alignment = 1
+
+[node name="score2" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 173.0
+offset_top = -243.0
+offset_right = 286.0
+offset_bottom = -217.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "#####"
+horizontal_alignment = 1
+
+[node name="score3" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 173.0
+offset_top = -193.0
+offset_right = 286.0
+offset_bottom = -167.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "#####"
+horizontal_alignment = 1
+
+[node name="score4" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 173.0
+offset_top = -143.0
+offset_right = 286.0
+offset_bottom = -117.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "#####"
+horizontal_alignment = 1
+
+[node name="score5" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 173.0
+offset_top = -93.0
+offset_right = 286.0
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "#####"
+horizontal_alignment = 1
+
+[node name="score6" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 173.0
+offset_top = -43.0
+offset_right = 286.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "#####"
+horizontal_alignment = 1
+
+[node name="score7" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 173.0
+offset_top = 7.0
+offset_right = 286.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "#####"
+horizontal_alignment = 1
+
+[node name="score8" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 173.0
+offset_top = 57.0
+offset_right = 286.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "#####"
+horizontal_alignment = 1
+
+[node name="score9" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 173.0
+offset_top = 107.0
+offset_right = 286.0
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "#####"
+horizontal_alignment = 1
+
+[node name="score10" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 173.0
+offset_top = 157.0
+offset_right = 286.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "#####"
+horizontal_alignment = 1
+
+[node name="score11" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 148.0
+offset_top = 292.5
+offset_right = 261.0
+offset_bottom = 318.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "#####"
+horizontal_alignment = 1
+
+[node name="tag1" type="Label" parent="MainMenu/Table/Screen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -367.0
+offset_top = -293.5
+offset_right = -228.0
+offset_bottom = -267.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.807843, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.811765, 0.0980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "YOU"
+horizontal_alignment = 1
+
+[node name="tag2" type="Label" parent="MainMenu/Table/Screen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -367.0
+offset_top = -243.5
+offset_right = -228.0
+offset_bottom = -217.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.807843, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.811765, 0.0980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "YOU"
+horizontal_alignment = 1
+
+[node name="tag3" type="Label" parent="MainMenu/Table/Screen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -367.0
+offset_top = -193.5
+offset_right = -228.0
+offset_bottom = -167.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.807843, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.811765, 0.0980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "YOU"
+horizontal_alignment = 1
+
+[node name="tag4" type="Label" parent="MainMenu/Table/Screen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -367.0
+offset_top = -143.5
+offset_right = -228.0
+offset_bottom = -117.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.807843, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.811765, 0.0980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "YOU"
+horizontal_alignment = 1
+
+[node name="tag5" type="Label" parent="MainMenu/Table/Screen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -367.0
+offset_top = -93.5
+offset_right = -228.0
+offset_bottom = -67.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.807843, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.811765, 0.0980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "YOU"
+horizontal_alignment = 1
+
+[node name="tag6" type="Label" parent="MainMenu/Table/Screen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -367.0
+offset_top = -43.5
+offset_right = -228.0
+offset_bottom = -17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.807843, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.811765, 0.0980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "YOU"
+horizontal_alignment = 1
+
+[node name="tag7" type="Label" parent="MainMenu/Table/Screen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -367.0
+offset_top = 6.5
+offset_right = -228.0
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.807843, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.811765, 0.0980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "YOU"
+horizontal_alignment = 1
+
+[node name="tag8" type="Label" parent="MainMenu/Table/Screen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -367.0
+offset_top = 56.5
+offset_right = -228.0
+offset_bottom = 82.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.807843, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.811765, 0.0980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "YOU"
+horizontal_alignment = 1
+
+[node name="tag9" type="Label" parent="MainMenu/Table/Screen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -367.0
+offset_top = 106.5
+offset_right = -228.0
+offset_bottom = 132.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.807843, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.811765, 0.0980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "YOU"
+horizontal_alignment = 1
+
+[node name="tag10" type="Label" parent="MainMenu/Table/Screen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -367.0
+offset_top = 156.5
+offset_right = -228.0
+offset_bottom = 182.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.807843, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.811765, 0.0980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "YOU"
+horizontal_alignment = 1
+
+[node name="tag11" type="Label" parent="MainMenu/Table/Screen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -346.0
+offset_top = 292.0
+offset_right = -207.0
+offset_bottom = 318.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.807843, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.811765, 0.0980392, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_u3s2f")
+theme_override_font_sizes/font_size = 24
+text = "YOU"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="MainMenu/Table/Screen"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -129.0
+offset_top = 51.0
+offset_right = 129.0
+offset_bottom = 113.0
+grow_horizontal = 2
+text = "Leaderboard"
+label_settings = SubResource("LabelSettings_yevw3")
+
+[node name="Label3" type="Label" parent="MainMenu/Table/Screen"]
+visible = false
+layout_mode = 0
+offset_left = 5.00001
+offset_top = 982.0
+offset_right = 1005.0
+offset_bottom = 1091.0
+rotation = -0.261799
+theme_override_styles/normal = SubResource("StyleBoxFlat_p0ymq")
+text = "Top-10 will receive 
+REWARDS!!!"
+label_settings = SubResource("LabelSettings_6lhfg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseTable" type="Button" parent="MainMenu/Table"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.5
+offset_top = 823.0
+offset_right = 51.5
+offset_bottom = 871.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0.67451)
+theme_override_fonts/font = ExtResource("10_bp0in")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_s1v1l")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7rr4t")
+text = "back"
+
+[node name="Panel3" type="Panel" parent="MainMenu/Table"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -274.0
+offset_top = 364.0
+offset_right = 326.0
+offset_bottom = 370.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4brg")
+
+[node name="Panel2" type="Panel" parent="MainMenu/Table"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -352.0
+offset_top = 415.0
+offset_right = 398.0
+offset_bottom = 558.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f122l")
+
+[node name="Panel" type="Panel" parent="MainMenu/Table"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -375.0
+offset_top = 389.0
+offset_right = 375.0
+offset_bottom = 533.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ateck")
+
+[node name="ColorRect" type="ColorRect" parent="MainMenu/Table"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -377.0
+offset_top = 379.0
+offset_right = -351.0
+offset_bottom = 434.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/Table"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -404.0
+offset_top = 368.0
+offset_right = -356.0
+offset_bottom = 416.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.76, 1.76)
+texture = ExtResource("26_p8u5j")
+
+[node name="Info" type="Button" parent="MainMenu/Table"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -355.0
+offset_top = 331.0
+offset_right = 355.0
+offset_bottom = 587.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme = SubResource("Theme_vgxlq")
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("11_mnclx")
+theme_override_font_sizes/font_size = 31
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hlwtf")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_dijwv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_uvo15")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_1qkrt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_iyoj0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_sj0cm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5axyw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5xmrj")
+text = "At the end of each week, the top 10 people will receive refback from paid attempts and bonus tokens."
+autowrap_mode = 2
+
+[node name="ShareResult" type="Button" parent="MainMenu/Table"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 191.0
+offset_top = -604.0
+offset_right = 541.0
+offset_bottom = -544.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(175, 30)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0.67451)
+theme_override_fonts/font = ExtResource("10_bp0in")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_s1v1l")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7rr4t")
+text = "❐ share"
+script = ExtResource("27_brbau")
+
+[node name="Inventory" type="CanvasLayer" parent="MainMenu"]
+layer = 55
+visible = false
+
+[node name="Card1" type="Panel" parent="MainMenu/Inventory"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -470.0
+offset_top = -631.0
+offset_right = -170.0
+offset_bottom = -281.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qogsu")
+
+[node name="Panel" type="Panel" parent="MainMenu/Inventory/Card1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -130.0
+offset_right = 75.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_ookna")
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/Inventory/Card1/Panel"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_s1r1w")
+
+[node name="Type" type="Label" parent="MainMenu/Inventory/Card1"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 16.0
+offset_right = 117.0
+offset_bottom = 45.0
+mouse_filter = 1
+text = "#0
+"
+label_settings = SubResource("LabelSettings_cwyyv")
+
+[node name="Name" type="Label" parent="MainMenu/Inventory/Card1"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -42.0
+offset_top = -184.0
+offset_right = 42.0
+offset_bottom = -159.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+text = "Vessel 0"
+label_settings = SubResource("LabelSettings_g7620")
+horizontal_alignment = 1
+
+[node name="Info" type="Label" parent="MainMenu/Inventory/Card1"]
+z_index = -10
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = 29.0
+offset_right = 125.0
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+text = "* Nothing special here"
+label_settings = SubResource("LabelSettings_cilc0")
+
+[node name="Selected" type="Label" parent="MainMenu/Inventory/Card1"]
+visible = false
+layout_mode = 0
+offset_left = 253.0
+offset_top = 1.0
+offset_right = 318.0
+offset_bottom = 24.0
+rotation = 0.785398
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm4et")
+text = "selected"
+label_settings = SubResource("LabelSettings_bs6vi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="MainMenu/Inventory/Card1"]
+visible = false
+layout_mode = 0
+offset_left = 237.0
+offset_top = 1.0
+offset_right = 277.0
+offset_bottom = 41.0
+rotation = 0.785398
+scale = Vector2(0.401245, 0.291985)
+mouse_filter = 1
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="MainMenu/Inventory/Card1"]
+visible = false
+layout_mode = 0
+offset_left = 288.0
+offset_top = 52.0
+offset_right = 328.0
+offset_bottom = 92.0
+rotation = 0.785398
+scale = Vector2(0.401245, 0.291985)
+mouse_filter = 1
+color = Color(0, 0, 0, 1)
+
+[node name="Card2" type="Panel" parent="MainMenu/Inventory"]
+modulate = Color(1, 1, 1, 0.196078)
+z_index = -1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -631.0
+offset_right = 150.0
+offset_bottom = -281.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qogsu")
+
+[node name="Panel" type="Panel" parent="MainMenu/Inventory/Card2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -130.0
+offset_right = 75.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_ookna")
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/Inventory/Card2/Panel"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Type" type="Label" parent="MainMenu/Inventory/Card2"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 16.0
+offset_right = 117.0
+offset_bottom = 45.0
+mouse_filter = 1
+text = "#
+"
+label_settings = SubResource("LabelSettings_cwyyv")
+
+[node name="Name" type="Label" parent="MainMenu/Inventory/Card2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -42.0
+offset_top = -184.0
+offset_right = 42.0
+offset_bottom = -159.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+text = "#"
+label_settings = SubResource("LabelSettings_g7620")
+horizontal_alignment = 1
+
+[node name="Info" type="Label" parent="MainMenu/Inventory/Card2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = 29.0
+offset_right = 125.0
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+text = "*"
+label_settings = SubResource("LabelSettings_cilc0")
+
+[node name="Selected" type="Label" parent="MainMenu/Inventory/Card2"]
+visible = false
+layout_mode = 0
+offset_left = 253.0
+offset_top = 1.0
+offset_right = 318.0
+offset_bottom = 24.0
+rotation = 0.785398
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm4et")
+text = "selected"
+label_settings = SubResource("LabelSettings_bs6vi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="MainMenu/Inventory/Card2"]
+visible = false
+layout_mode = 0
+offset_left = 237.0
+offset_top = 1.0
+offset_right = 277.0
+offset_bottom = 41.0
+rotation = 0.785398
+scale = Vector2(0.401245, 0.291985)
+mouse_filter = 1
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="MainMenu/Inventory/Card2"]
+visible = false
+layout_mode = 0
+offset_left = 288.0
+offset_top = 52.0
+offset_right = 328.0
+offset_bottom = 92.0
+rotation = 0.785398
+scale = Vector2(0.401245, 0.291985)
+mouse_filter = 1
+color = Color(0, 0, 0, 1)
+
+[node name="Card3" type="Panel" parent="MainMenu/Inventory"]
+modulate = Color(1, 1, 1, 0.196078)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 170.0
+offset_top = -631.0
+offset_right = 470.0
+offset_bottom = -281.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qogsu")
+
+[node name="Panel" type="Panel" parent="MainMenu/Inventory/Card3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -130.0
+offset_right = 75.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_ookna")
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/Inventory/Card3/Panel"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Type" type="Label" parent="MainMenu/Inventory/Card3"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 16.0
+offset_right = 117.0
+offset_bottom = 45.0
+mouse_filter = 1
+text = "#
+"
+label_settings = SubResource("LabelSettings_cwyyv")
+
+[node name="Name" type="Label" parent="MainMenu/Inventory/Card3"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -42.0
+offset_top = -184.0
+offset_right = 42.0
+offset_bottom = -159.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+text = "#"
+label_settings = SubResource("LabelSettings_g7620")
+horizontal_alignment = 1
+
+[node name="Info" type="Label" parent="MainMenu/Inventory/Card3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = 29.0
+offset_right = 125.0
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+text = "*"
+label_settings = SubResource("LabelSettings_cilc0")
+
+[node name="Selected" type="Label" parent="MainMenu/Inventory/Card3"]
+visible = false
+layout_mode = 0
+offset_left = 253.0
+offset_top = 1.0
+offset_right = 318.0
+offset_bottom = 24.0
+rotation = 0.785398
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm4et")
+text = "selected"
+label_settings = SubResource("LabelSettings_bs6vi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="MainMenu/Inventory/Card3"]
+visible = false
+layout_mode = 0
+offset_left = 237.0
+offset_top = 1.0
+offset_right = 277.0
+offset_bottom = 41.0
+rotation = 0.785398
+scale = Vector2(0.401245, 0.291985)
+mouse_filter = 1
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="MainMenu/Inventory/Card3"]
+visible = false
+layout_mode = 0
+offset_left = 288.0
+offset_top = 52.0
+offset_right = 328.0
+offset_bottom = 92.0
+rotation = 0.785398
+scale = Vector2(0.401245, 0.291985)
+mouse_filter = 1
+color = Color(0, 0, 0, 1)
+
+[node name="Card4" type="Panel" parent="MainMenu/Inventory"]
+modulate = Color(1, 1, 1, 0.196078)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -470.0
+offset_top = -262.0
+offset_right = -170.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qogsu")
+
+[node name="Panel" type="Panel" parent="MainMenu/Inventory/Card4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -130.0
+offset_right = 75.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_ookna")
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/Inventory/Card4/Panel"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Type" type="Label" parent="MainMenu/Inventory/Card4"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 16.0
+offset_right = 117.0
+offset_bottom = 45.0
+mouse_filter = 1
+text = "#
+"
+label_settings = SubResource("LabelSettings_cwyyv")
+
+[node name="Name" type="Label" parent="MainMenu/Inventory/Card4"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -42.0
+offset_top = -184.0
+offset_right = 42.0
+offset_bottom = -159.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+text = "#"
+label_settings = SubResource("LabelSettings_g7620")
+horizontal_alignment = 1
+
+[node name="Info" type="Label" parent="MainMenu/Inventory/Card4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = 29.0
+offset_right = 125.0
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+text = "*"
+label_settings = SubResource("LabelSettings_cilc0")
+
+[node name="Selected" type="Label" parent="MainMenu/Inventory/Card4"]
+visible = false
+layout_mode = 0
+offset_left = 253.0
+offset_top = 1.0
+offset_right = 318.0
+offset_bottom = 24.0
+rotation = 0.785398
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm4et")
+text = "selected"
+label_settings = SubResource("LabelSettings_bs6vi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="MainMenu/Inventory/Card4"]
+visible = false
+layout_mode = 0
+offset_left = 237.0
+offset_top = 1.0
+offset_right = 277.0
+offset_bottom = 41.0
+rotation = 0.785398
+scale = Vector2(0.401245, 0.291985)
+mouse_filter = 1
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="MainMenu/Inventory/Card4"]
+visible = false
+layout_mode = 0
+offset_left = 288.0
+offset_top = 52.0
+offset_right = 328.0
+offset_bottom = 92.0
+rotation = 0.785398
+scale = Vector2(0.401245, 0.291985)
+mouse_filter = 1
+color = Color(0, 0, 0, 1)
+
+[node name="Card5" type="Panel" parent="MainMenu/Inventory"]
+modulate = Color(1, 1, 1, 0.196078)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -262.0
+offset_right = 150.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qogsu")
+
+[node name="Panel" type="Panel" parent="MainMenu/Inventory/Card5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -130.0
+offset_right = 75.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_ookna")
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/Inventory/Card5/Panel"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Type" type="Label" parent="MainMenu/Inventory/Card5"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 16.0
+offset_right = 117.0
+offset_bottom = 45.0
+mouse_filter = 1
+text = "#
+"
+label_settings = SubResource("LabelSettings_cwyyv")
+
+[node name="Name" type="Label" parent="MainMenu/Inventory/Card5"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -42.0
+offset_top = -184.0
+offset_right = 42.0
+offset_bottom = -159.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+text = "#"
+label_settings = SubResource("LabelSettings_g7620")
+horizontal_alignment = 1
+
+[node name="Info" type="Label" parent="MainMenu/Inventory/Card5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = 29.0
+offset_right = 125.0
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+text = "*"
+label_settings = SubResource("LabelSettings_cilc0")
+
+[node name="Selected" type="Label" parent="MainMenu/Inventory/Card5"]
+visible = false
+layout_mode = 0
+offset_left = 253.0
+offset_top = 1.0
+offset_right = 318.0
+offset_bottom = 24.0
+rotation = 0.785398
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm4et")
+text = "selected"
+label_settings = SubResource("LabelSettings_bs6vi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="MainMenu/Inventory/Card5"]
+visible = false
+layout_mode = 0
+offset_left = 237.0
+offset_top = 1.0
+offset_right = 277.0
+offset_bottom = 41.0
+rotation = 0.785398
+scale = Vector2(0.401245, 0.291985)
+mouse_filter = 1
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="MainMenu/Inventory/Card5"]
+visible = false
+layout_mode = 0
+offset_left = 288.0
+offset_top = 52.0
+offset_right = 328.0
+offset_bottom = 92.0
+rotation = 0.785398
+scale = Vector2(0.401245, 0.291985)
+mouse_filter = 1
+color = Color(0, 0, 0, 1)
+
+[node name="Card6" type="Panel" parent="MainMenu/Inventory"]
+modulate = Color(1, 1, 1, 0.196078)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 170.0
+offset_top = -262.0
+offset_right = 470.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qogsu")
+
+[node name="Panel" type="Panel" parent="MainMenu/Inventory/Card6"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -130.0
+offset_right = 75.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_ookna")
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/Inventory/Card6/Panel"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Type" type="Label" parent="MainMenu/Inventory/Card6"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 16.0
+offset_right = 117.0
+offset_bottom = 45.0
+mouse_filter = 1
+text = "#
+"
+label_settings = SubResource("LabelSettings_cwyyv")
+
+[node name="Name" type="Label" parent="MainMenu/Inventory/Card6"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -42.0
+offset_top = -184.0
+offset_right = 42.0
+offset_bottom = -159.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+text = "#"
+label_settings = SubResource("LabelSettings_g7620")
+horizontal_alignment = 1
+
+[node name="Info" type="Label" parent="MainMenu/Inventory/Card6"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = 29.0
+offset_right = 125.0
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+text = "*"
+label_settings = SubResource("LabelSettings_cilc0")
+
+[node name="Selected" type="Label" parent="MainMenu/Inventory/Card6"]
+visible = false
+layout_mode = 0
+offset_left = 253.0
+offset_top = 1.0
+offset_right = 318.0
+offset_bottom = 24.0
+rotation = 0.785398
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm4et")
+text = "selected"
+label_settings = SubResource("LabelSettings_bs6vi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="MainMenu/Inventory/Card6"]
+visible = false
+layout_mode = 0
+offset_left = 237.0
+offset_top = 1.0
+offset_right = 277.0
+offset_bottom = 41.0
+rotation = 0.785398
+scale = Vector2(0.401245, 0.291985)
+mouse_filter = 1
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="MainMenu/Inventory/Card6"]
+visible = false
+layout_mode = 0
+offset_left = 288.0
+offset_top = 52.0
+offset_right = 328.0
+offset_bottom = 92.0
+rotation = 0.785398
+scale = Vector2(0.401245, 0.291985)
+mouse_filter = 1
+color = Color(0, 0, 0, 1)
+
+[node name="CloseInventory" type="Button" parent="MainMenu/Inventory"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.5
+offset_top = 823.0
+offset_right = 51.5
+offset_bottom = 871.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0.67451)
+theme_override_fonts/font = ExtResource("10_bp0in")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_s1v1l")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7rr4t")
+text = "back"
+
+[node name="Label" type="Label" parent="MainMenu/Inventory"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.5
+offset_top = 652.0
+offset_right = 132.5
+offset_bottom = 675.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "each cost 100 000 Orbitals!"
+label_settings = SubResource("LabelSettings_ddedt")
+
+[node name="OpenChest" type="Button" parent="MainMenu/Inventory"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = 542.0
+offset_right = 175.0
+offset_bottom = 642.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme = SubResource("Theme_vgxlq")
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_bp0in")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hlwtf")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_3j0ru")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p3w8m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4vd8k")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3j0ru")
+text = "Open chest"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="MainMenu/Inventory/OpenChest"]
+position = Vector2(175, 498)
+emitting = false
+amount = 250
+texture = ExtResource("28_wj3wc")
+lifetime = 5.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(500, 50)
+spread = 180.0
+gravity = Vector2(0, -100)
+initial_velocity_min = 15.0
+initial_velocity_max = 30.0
+angle_min = -25.0
+angle_max = 25.0
+scale_amount_min = 0.6
+scale_amount_curve = SubResource("Curve_8clcw")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="MainMenu/Inventory/OpenChest"]
+position = Vector2(175, 498)
+emitting = false
+amount = 150
+texture = ExtResource("29_ggod6")
+lifetime = 5.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(500, 50)
+spread = 180.0
+gravity = Vector2(0, -100)
+initial_velocity_min = 15.0
+initial_velocity_max = 30.0
+angle_min = -25.0
+angle_max = 25.0
+scale_amount_min = 0.6
+scale_amount_curve = SubResource("Curve_8clcw")
+
+[node name="Balance" type="Label" parent="MainMenu/Inventory"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -386.0
+offset_top = 417.0
+offset_right = 414.0
+offset_bottom = 481.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Your Orbitals: 0 ⛁"
+label_settings = SubResource("LabelSettings_3fbwm")
+
+[node name="Divider" type="Panel" parent="MainMenu/Inventory"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -450.0
+offset_top = -702.0
+offset_right = 450.0
+offset_bottom = -692.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4brg")
+
+[node name="Upgrades" type="CanvasLayer" parent="MainMenu"]
+layer = 111
+visible = false
+
+[node name="RocketImage" type="Panel" parent="MainMenu/Upgrades"]
+z_index = 10
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -427.0
+offset_right = 125.0
+offset_bottom = -177.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_ookna")
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/Upgrades/RocketImage"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_s1r1w")
+
+[node name="Marker2D" type="Marker2D" parent="MainMenu/Upgrades/RocketImage"]
+position = Vector2(126, 133)
+
+[node name="SpeedTextureBar" type="TextureProgressBar" parent="MainMenu/Upgrades"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -358.0
+offset_top = -445.0
+offset_right = -258.0
+offset_bottom = -345.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 10.0
+fill_mode = 4
+texture_under = ExtResource("35_k86la")
+texture_progress = ExtResource("35_k86la")
+tint_under = Color(0.873298, 0.873298, 0.873298, 1)
+tint_progress = Color(0.451667, 1, 0.3, 1)
+
+[node name="PlusSpeed" type="Label" parent="MainMenu/Upgrades"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -426.0
+offset_top = -410.0
+offset_right = -376.0
+offset_bottom = -380.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_2pjrh")
+text = "+"
+label_settings = SubResource("LabelSettings_eu66r")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpeedArrow" type="ColorRect" parent="MainMenu/Upgrades"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -390.0
+offset_right = -32.0
+offset_bottom = -380.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="MainMenu/Upgrades/SpeedArrow"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = -2.0
+offset_right = 204.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Speed" type="Label" parent="MainMenu/Upgrades"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -377.0
+offset_top = -493.0
+offset_right = -235.0
+offset_bottom = -454.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+text = "SPEED"
+label_settings = SubResource("LabelSettings_8vucm")
+horizontal_alignment = 1
+
+[node name="RotationTextureBar" type="TextureProgressBar" parent="MainMenu/Upgrades"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 264.0
+offset_top = -445.0
+offset_right = 364.0
+offset_bottom = -345.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 10.0
+fill_mode = 5
+texture_under = ExtResource("35_k86la")
+texture_progress = ExtResource("35_k86la")
+tint_under = Color(0.873298, 0.873298, 0.873298, 1)
+tint_progress = Color(0.451667, 1, 0.3, 1)
+
+[node name="PlusRotation" type="Label" parent="MainMenu/Upgrades"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 379.0
+offset_top = -410.0
+offset_right = 429.0
+offset_bottom = -380.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_2pjrh")
+text = "+"
+label_settings = SubResource("LabelSettings_eu66r")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RotationArrow" type="ColorRect" parent="MainMenu/Upgrades"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 44.0
+offset_top = -400.0
+offset_right = 54.0
+offset_bottom = -390.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="MainMenu/Upgrades/RotationArrow"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = -2.0
+offset_right = 204.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Rotation" type="Label" parent="MainMenu/Upgrades"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 241.0
+offset_top = -492.0
+offset_right = 397.0
+offset_bottom = -453.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+text = "ROTATION"
+label_settings = SubResource("LabelSettings_8vucm")
+horizontal_alignment = 1
+
+[node name="BoostSpeedPlus" type="Label" parent="MainMenu/Upgrades"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 379.0
+offset_top = -225.0
+offset_right = 429.0
+offset_bottom = -195.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_2pjrh")
+text = "+"
+label_settings = SubResource("LabelSettings_eu66r")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BoostSpeedArrow" type="ColorRect" parent="MainMenu/Upgrades"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 44.0
+offset_top = -217.0
+offset_right = 54.0
+offset_bottom = -207.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="MainMenu/Upgrades/BoostSpeedArrow"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = -2.0
+offset_right = 204.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="BoostSpeedTextureBar" type="TextureProgressBar" parent="MainMenu/Upgrades"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 264.0
+offset_top = -262.0
+offset_right = 364.0
+offset_bottom = -162.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 10.0
+fill_mode = 5
+texture_under = ExtResource("35_k86la")
+texture_progress = ExtResource("35_k86la")
+tint_under = Color(0.873298, 0.873298, 0.873298, 1)
+tint_progress = Color(0.451667, 1, 0.3, 1)
+
+[node name="BoostSpeed" type="Label" parent="MainMenu/Upgrades"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 219.0
+offset_top = -148.0
+offset_right = 428.0
+offset_bottom = -109.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+text = "BOOST SPEED"
+label_settings = SubResource("LabelSettings_8vucm")
+horizontal_alignment = 1
+
+[node name="BoostDuration" type="Label" parent="MainMenu/Upgrades"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -431.0
+offset_top = -148.0
+offset_right = -159.0
+offset_bottom = -109.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+text = "BOOST DURATION"
+label_settings = SubResource("LabelSettings_8vucm")
+horizontal_alignment = 1
+
+[node name="BoostDurationArrow" type="ColorRect" parent="MainMenu/Upgrades"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -207.0
+offset_right = -32.0
+offset_bottom = -197.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="MainMenu/Upgrades/BoostDurationArrow"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = -2.0
+offset_right = 204.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="BoostDurationPlus" type="Label" parent="MainMenu/Upgrades"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -426.0
+offset_top = -225.0
+offset_right = -376.0
+offset_bottom = -195.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_2pjrh")
+text = "+"
+label_settings = SubResource("LabelSettings_eu66r")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BoostDurationTextureBar" type="TextureProgressBar" parent="MainMenu/Upgrades"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -357.0
+offset_top = -262.0
+offset_right = -257.0
+offset_bottom = -162.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 10.0
+fill_mode = 4
+texture_under = ExtResource("35_k86la")
+texture_progress = ExtResource("35_k86la")
+tint_under = Color(0.873298, 0.873298, 0.873298, 1)
+tint_progress = Color(0.451667, 1, 0.3, 1)
+
+[node name="YouHave" type="Label" parent="MainMenu/Upgrades"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -273.0
+offset_top = -698.0
+offset_right = 273.0
+offset_bottom = -651.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Available to upgrade: 0/0"
+label_settings = SubResource("LabelSettings_pkd6f")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BuyUpgrade" type="Button" parent="MainMenu/Upgrades"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = 542.0
+offset_right = 175.0
+offset_bottom = 642.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme = SubResource("Theme_vgxlq")
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_bp0in")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hlwtf")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_3j0ru")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p3w8m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4vd8k")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3j0ru")
+text = "Buy upgrade"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="MainMenu/Upgrades/BuyUpgrade"]
+position = Vector2(175, 498)
+emitting = false
+amount = 250
+texture = ExtResource("28_wj3wc")
+lifetime = 5.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(500, 50)
+spread = 180.0
+gravity = Vector2(0, -100)
+initial_velocity_min = 15.0
+initial_velocity_max = 30.0
+angle_min = -25.0
+angle_max = 25.0
+scale_amount_min = 0.6
+scale_amount_curve = SubResource("Curve_8clcw")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="MainMenu/Upgrades/BuyUpgrade"]
+position = Vector2(175, 498)
+emitting = false
+amount = 150
+texture = ExtResource("29_ggod6")
+lifetime = 5.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(500, 50)
+spread = 180.0
+gravity = Vector2(0, -100)
+initial_velocity_min = 15.0
+initial_velocity_max = 30.0
+angle_min = -25.0
+angle_max = 25.0
+scale_amount_min = 0.6
+scale_amount_curve = SubResource("Curve_8clcw")
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="MainMenu/Upgrades/BuyUpgrade"]
+position = Vector2(176, -836)
+emitting = false
+amount = 25
+texture = ExtResource("36_gggxx")
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+local_coords = true
+emission_shape = 3
+emission_rect_extents = Vector2(30, 5)
+spread = 180.0
+gravity = Vector2(0, -150)
+initial_velocity_min = 15.0
+initial_velocity_max = 30.0
+angle_min = -25.0
+angle_max = 25.0
+scale_amount_min = 0.6
+scale_amount_curve = SubResource("Curve_8clcw")
+
+[node name="Cost" type="Label" parent="MainMenu/Upgrades"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -226.0
+offset_top = 641.0
+offset_right = 226.0
+offset_bottom = 688.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Each upgrade costs 10 000 Orbitals"
+label_settings = SubResource("LabelSettings_a26e7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradesBalance" type="Label" parent="MainMenu/Upgrades"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -386.0
+offset_top = 347.0
+offset_right = 464.0
+offset_bottom = 416.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Max upgrades: 0/24"
+label_settings = SubResource("LabelSettings_3fbwm")
+
+[node name="Balance" type="Label" parent="MainMenu/Upgrades"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -386.0
+offset_top = 417.0
+offset_right = 414.0
+offset_bottom = 481.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Your Orbitals: 0 ⛁"
+label_settings = SubResource("LabelSettings_3fbwm")
+
+[node name="Divider" type="Panel" parent="MainMenu/Upgrades"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = 297.0
+offset_right = 450.0
+offset_bottom = 307.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4brg")
+
+[node name="CloseUpgrade" type="Button" parent="MainMenu/Upgrades"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.5
+offset_top = 823.0
+offset_right = 51.5
+offset_bottom = 871.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0.67451)
+theme_override_fonts/font = ExtResource("10_bp0in")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_s1v1l")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_yqxt6")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7rr4t")
+text = "back"
+
+[node name="ReturnAll" type="Label" parent="MainMenu/Upgrades"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -562.0
+offset_right = 25.0
+offset_bottom = -522.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_124wu")
+text = "↻"
+label_settings = SubResource("LabelSettings_eu66r")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Loading" type="CanvasLayer" parent="MainMenu"]
+layer = 128
+visible = false
+
+[node name="Loading" type="Label" parent="MainMenu/Loading"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2500.0
+offset_top = -1749.0
+offset_right = 2500.0
+offset_bottom = 2107.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_imiss")
+text = "<<< LOADING >>>"
+label_settings = SubResource("LabelSettings_uhjbk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1k486")
+
+[node name="Share" type="Node" parent="."]
+script = ExtResource("25_m3npa")
+
+[node name="Game" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("41_n3g5y")
+volume_db = -10.0
+pitch_scale = 1.2
+playback_type = 1
+
+[node name="Pressing" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("38_jey67")
+
+[node name="Menu" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("43_n3g5y")
+volume_db = -5.0
+pitch_scale = 1.2
+autoplay = true
+
+[node name="Reward" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("42_y08lv")
+
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]
+[connection signal="timeout" from="BoosterSpawner" to="BoosterSpawner" method="_on_timeout"]
+[connection signal="timeout" from="CoinSpawner" to="CoinSpawner" method="_on_timeout"]
+[connection signal="timeout" from="ObstacleSpawner" to="." method="_on_obstacle_spawner_timeout"]
+[connection signal="timeout" from="PortalBooster" to="PortalBooster" method="_on_timeout"]
+[connection signal="area_entered" from="Player/Player" to="Player/Player" method="_on_area_entered"]
+[connection signal="timeout" from="Player/Player/UI/InvincibleBar/BoosterTimer" to="Player/Player" method="_on_booster_timer_timeout"]
+[connection signal="timeout" from="Player/Player/UI/InvincibleBar/BarTimer" to="Player/Player" method="_on_bar_timer_timeout"]
+[connection signal="pressed" from="Player/Player/UI/DeadControl/Control/Skip" to="Player/Player" method="_on_skip_pressed"]
+[connection signal="timeout" from="Player/Player/UI/DeadControl/Control/ParcTimer" to="." method="_on_parc_timer_timeout"]
+[connection signal="pressed" from="Player/Player/UI/DeadControl/Control/SaveResult" to="." method="_on_save_result_pressed"]
+[connection signal="timeout" from="Player/Player/ShadowTimer" to="Player/Player" method="_on_shadow_timer_timeout"]
+[connection signal="gui_input" from="MainMenu/Wallet" to="." method="_on_wallet_gui_input"]
+[connection signal="pressed" from="MainMenu/StartGame/Start" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MainMenu/StartGame/BuyTry" to="." method="_on_buy_try_pressed"]
+[connection signal="pressed" from="MainMenu/StartGame/Table" to="." method="_on_table_pressed"]
+[connection signal="pressed" from="MainMenu/StartGame/Rockets" to="." method="_on_inventory_pressed"]
+[connection signal="pressed" from="MainMenu/StartGame/Upgrades" to="." method="_on_upgrades_pressed"]
+[connection signal="pressed" from="MainMenu/StartGame/Info" to="." method="_on_info_pressed"]
+[connection signal="pressed" from="MainMenu/NotRegistered/Reg" to="." method="_on_reg_pressed"]
+[connection signal="pressed" from="MainMenu/Info/CloseInfo" to="." method="_on_close_info_pressed"]
+[connection signal="pressed" from="MainMenu/Table/CloseTable" to="." method="_on_close_table_pressed"]
+[connection signal="pressed" from="MainMenu/Table/ShareResult" to="." method="_on_share_result_pressed"]
+[connection signal="gui_input" from="MainMenu/Inventory/Card1" to="." method="_on_card_gui_input" binds= [1]]
+[connection signal="gui_input" from="MainMenu/Inventory/Card2" to="." method="_on_card_gui_input" binds= [2]]
+[connection signal="gui_input" from="MainMenu/Inventory/Card3" to="." method="_on_card_gui_input" binds= [3]]
+[connection signal="gui_input" from="MainMenu/Inventory/Card4" to="." method="_on_card_gui_input" binds= [4]]
+[connection signal="gui_input" from="MainMenu/Inventory/Card5" to="." method="_on_card_gui_input" binds= [5]]
+[connection signal="gui_input" from="MainMenu/Inventory/Card6" to="." method="_on_card_gui_input" binds= [6]]
+[connection signal="pressed" from="MainMenu/Inventory/CloseInventory" to="." method="_on_close_inventory_pressed"]
+[connection signal="pressed" from="MainMenu/Inventory/OpenChest" to="." method="_on_open_chest_pressed"]
+[connection signal="gui_input" from="MainMenu/Upgrades/PlusSpeed" to="." method="_on_plus_upgrade_gui_input" binds= ["speed"]]
+[connection signal="gui_input" from="MainMenu/Upgrades/PlusRotation" to="." method="_on_plus_upgrade_gui_input" binds= ["rotation"]]
+[connection signal="gui_input" from="MainMenu/Upgrades/BoostSpeedPlus" to="." method="_on_plus_upgrade_gui_input" binds= ["boost_speed"]]
+[connection signal="gui_input" from="MainMenu/Upgrades/BoostDurationPlus" to="." method="_on_plus_upgrade_gui_input" binds= ["boost_duration"]]
+[connection signal="pressed" from="MainMenu/Upgrades/BuyUpgrade" to="." method="_on_buy_upgrade_pressed"]
+[connection signal="pressed" from="MainMenu/Upgrades/CloseUpgrade" to="." method="_on_close_upgrade_pressed"]
+[connection signal="gui_input" from="MainMenu/Upgrades/ReturnAll" to="." method="_on_return_all_gui_input"]

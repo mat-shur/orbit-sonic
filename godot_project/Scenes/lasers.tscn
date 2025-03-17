@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsnx0ggh4ph55"]
+
+[ext_resource type="Script" uid="uid://c81c1t57brwyr" path="res://Scripts/lasers.gd" id="1_gof7k"]
+
+[node name="Lasers" type="Area2D" groups=["meteorite"]]
+script = ExtResource("1_gof7k")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
